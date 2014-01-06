@@ -3,8 +3,8 @@ class CreatePermissions < ActiveRecord::Migration
     create_table :permissions do |t|
       t.string :action
       t.string :subject_class
-      t.string :subject_id
-      t.string :role_id
+      t.integer :subject_id
+      t.integer :role_id
 
       t.timestamps
     end
