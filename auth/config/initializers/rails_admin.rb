@@ -1,4 +1,4 @@
-# RailsAdmin config file. Generated on January 06, 2014 20:28
+# RailsAdmin config file. Generated on January 06, 2014 20:19
 # See github.com/sferik/rails_admin for more informations
 
 RailsAdmin.config do |config|
@@ -13,6 +13,9 @@ RailsAdmin.config do |config|
 
   # RailsAdmin may need a way to know who the current user is]
   config.current_user_method { current_user } # auto-generated
+
+  # CanCan authorization
+  config.authorize_with :cancan
 
   # If you want to track changes on your models:
   # config.audit_with :history, 'User'
@@ -64,21 +67,21 @@ RailsAdmin.config do |config|
 
   #   # Found columns:
 
-  #     configure :id, :integer 
-  #     configure :email, :string 
-  #     configure :password, :password         # Hidden 
-  #     configure :password_confirmation, :password         # Hidden 
-  #     configure :remember_created_at, :datetime 
-  #     configure :sign_in_count, :integer 
-  #     configure :current_sign_in_at, :datetime 
-  #     configure :last_sign_in_at, :datetime 
-  #     configure :current_sign_in_ip, :string 
-  #     configure :last_sign_in_ip, :string 
-  #     configure :failed_attempts, :integer 
-  #     configure :locked_at, :datetime 
-  #     configure :role_id, :integer 
-  #     configure :created_at, :datetime 
-  #     configure :updated_at, :datetime 
+  #     configure :id, :integer
+  #     configure :email, :string
+  #     configure :password, :password         # Hidden
+  #     configure :password_confirmation, :password         # Hidden
+  #     configure :remember_created_at, :datetime
+  #     configure :sign_in_count, :integer
+  #     configure :current_sign_in_at, :datetime
+  #     configure :last_sign_in_at, :datetime
+  #     configure :current_sign_in_ip, :string
+  #     configure :last_sign_in_ip, :string
+  #     configure :failed_attempts, :integer
+  #     configure :locked_at, :datetime
+  #     configure :role_id, :integer
+  #     configure :created_at, :datetime
+  #     configure :updated_at, :datetime
 
   #   # Cross-section configuration:
 
