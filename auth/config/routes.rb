@@ -1,4 +1,5 @@
 Auth::Application.routes.draw do
+  get "users/me"
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
   mount Devise::Oauth2Providable::Engine => '/oauth2'
