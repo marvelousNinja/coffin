@@ -21,11 +21,11 @@ module AuthLib
       end
 
       def add_required_routes
-        route "devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }"
-        route "devise_scope :user do"
-        route "  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session"
-        route "  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session"
-        route "end"
+        route "devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }\n  " <<
+        "devise_scope :user do\n  " <<
+        "  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session\n  " <<
+        "  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session\n  " <<
+        "end\n"
       end
 
       def copy_migrations
