@@ -31,6 +31,10 @@ module AuthLib
       def copy_migrations
         rake 'auth_lib:install:migrations'
       end
+
+      def copy_views
+        generate 'devise:views'
+      end
     end
   end
 end
