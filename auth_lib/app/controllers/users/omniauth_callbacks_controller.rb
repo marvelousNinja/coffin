@@ -5,6 +5,7 @@ class Users::OmniauthCallbacksController < ::Devise::OmniauthCallbacksController
 		new_user_session_path
 	end
 	def centralized_auth
+		binding.pry
 	  options = request.env['omniauth.auth']
 		user = User.find_or_create_by uid: options[:uid], provider: options[:provider]
     set_flash_message(:notice, :success, :kind => "Facebook") if is_navigational_format?

@@ -14,10 +14,14 @@ module OmniAuth
 
     uid { raw_info['id'] }
 
-    info do
+    extra do
       {
-        email: raw_info['email']
+        'raw_info' => raw_info
       }
+    end
+
+    def raw_info
+      @raw_info ||= access_token.get("/users/me.json?access_token=#{access_token.token}&client=#{access_token.client.id}").parsed
     end
   end
  end

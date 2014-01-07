@@ -7,8 +7,7 @@ class UsersController < ApplicationController
   	  user = access_token.user
       render :json => user.to_json
     else
-    	binding.pry
-    	raise 'bullshit'
+    	render :json => [], :status => :unauthorized
     end
   end
 end
