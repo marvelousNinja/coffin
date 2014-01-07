@@ -20,8 +20,16 @@ module AuthLib
         copy_file 'user.rb', 'app/models/user.rb'
       end
 
+      def add_required_routes
+        route "devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }"
+        route "devise_scope :user do"
+        route "  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session"
+        route "  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session"
+        route "end"
+      end
+
       def copy_migrations
-        generate 'auth_lib:install:migrations'
+        rake 'auth_lib:install:migrations'
       end
     end
   end
