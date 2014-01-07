@@ -5,6 +5,7 @@ module OmniAuth
  module Strategies
   class CentralizedAuth < OmniAuth::Strategies::OAuth2
     option :name, 'centralized_auth'
+    option :provider_ignores_state, true
     option :client_options, {
       :site => 'http://localhost:3000',
       :authorize_url => '/oauth2/authorize',
