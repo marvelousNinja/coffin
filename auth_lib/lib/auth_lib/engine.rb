@@ -3,6 +3,7 @@ require 'devise'
 require 'cancan'
 require 'omniauth'
 require 'omniauth-oauth2'
+require 'omniauth/strategies/centralized_auth'
 
 module AuthLib
   class Engine < ::Rails::Engine
