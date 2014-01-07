@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(version: 20140106194753) do
 
   create_table "permissions", force: true do |t|
     t.string   "action"
-    t.string   "subject_class"
-    t.string   "subject_id"
-    t.string   "role_id"
+    t.string   "subject"
+    t.integer  "subject_id"
+    t.integer  "role_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140106194753) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -15,3 +15,5 @@ gem 'devise'
 gem 'rails_admin'
 gem 'cancan'
 gem 'paper_trail'
+
+gem 'pry-nav'
