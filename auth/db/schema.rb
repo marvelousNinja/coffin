@@ -15,10 +15,12 @@ ActiveRecord::Schema.define(version: 20140106194753) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "permissions", force: true do |t|
     t.string   "action"
     t.string   "subject"
+    t.boolean  "owning_required"
     t.integer  "subject_id"
     t.integer  "role_id"
     t.datetime "created_at"
