@@ -32,7 +32,7 @@ class CreateUsers < ActiveRecord::Migration
 
       ## Centralized auth
       t.string :provider
-      t.string :uid
+      t.integer :uid
       t.string :email
 
       t.timestamps
