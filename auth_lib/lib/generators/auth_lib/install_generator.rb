@@ -9,6 +9,8 @@ module AuthLib
       class_option :orm
 
       def copy_initializer
+        @app_id = ask("Enter the application ID for Centralized auth:\n", :yellow)
+        @app_secret = ask("Enter the application secret:\n", :yellow)
         template 'devise.rb', 'config/initializers/devise.rb'
       end
 
