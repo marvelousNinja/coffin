@@ -1,8 +1,11 @@
 Auth::Application.routes.draw do
-  get "users/me"
+  use_doorkeeper
+  get '/me' => 'users#me'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
-  mount Devise::Oauth2Providable::Engine => '/oauth2'
+
+  root to: redirect('/admin')
+  #mount Devise::Oauth2Providable::Engine => '/oauth2'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
