@@ -18,4 +18,4 @@ gem 'paper_trail'
 
 gem 'pry-nav'
 
-gem 'devise_oauth2_providable', path: '/home/alexander/Code/another/coffin/devise_oauth2_providable'
+#gem 'devise_oauth2_providable', path: '/home/alexander/Code/another/coffin/devise_oauth2_providable'
