@@ -3,7 +3,7 @@ require 'rails/generators/base'
 module AuthLib
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      source_root File.expand_path('../../templates', __FILE__)
+      source_root File.expand_path('../templates', __FILE__)
 
       desc 'Runs devise generators and sets up omniauth'
       class_option :orm
@@ -33,7 +33,7 @@ module AuthLib
       end
 
       def copy_views
-        generate 'devise:views'
+        copy_file 'new.html.erb', 'app/views/devise/sessions/new.html.erb'
       end
     end
   end
