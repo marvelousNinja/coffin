@@ -26,7 +26,7 @@ module AuthLib
         route "devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }\n  " <<
         "devise_scope :user do\n  " <<
         "  get 'sign_in', :to => 'devise/sessions#new', :as => :new_user_session\n  " <<
-        "  get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session\n  " <<
+        "  match 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session, :via => [:get, :delete]\n  " <<
         "end\n"
       end
 

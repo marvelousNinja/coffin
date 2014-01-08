@@ -34,6 +34,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :provider
       t.integer :uid
       t.string :email
+      t.string :access_token
 
       t.timestamps
     end
