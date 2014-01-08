@@ -1,6 +1,7 @@
 Auth::Application.routes.draw do
   use_doorkeeper
   get '/me' => 'users#me'
+  get '/my_permissions' => 'users#my_permissions'
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
   devise_for :users
 
