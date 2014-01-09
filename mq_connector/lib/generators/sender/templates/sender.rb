@@ -1,4 +1,4 @@
-class <%= file_name.capitalize %>Sender
+class <%= file_name.camelize %>Sender
   include MqConnector::Sender
 
   def self.send_message(message)

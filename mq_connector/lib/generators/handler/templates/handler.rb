@@ -1,4 +1,4 @@
-class <%= file_name.capitalize %>Handler
+class <%= file_name.camelize %>Handler
   include MqConnector::Handler
 
   def self.handle
