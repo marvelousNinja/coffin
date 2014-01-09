@@ -21,3 +21,5 @@ gem 'pry-nav'
 #gem 'devise_oauth2_providable', path: '/home/alexander/Code/another/coffin/devise_oauth2_providable'
 
 gem 'doorkeeper'
+
+gem 'mq_connector', path: '../mq_connector'
