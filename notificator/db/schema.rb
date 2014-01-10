@@ -11,11 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140110152657) do
+ActiveRecord::Schema.define(version: 20140110183028) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
+
+  create_table "mail_templates", force: true do |t|
+    t.text     "body"
+    t.string   "path"
+    t.string   "format"
+    t.string   "locale"
+    t.string   "handler"
+    t.boolean  "partial",    default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider"
