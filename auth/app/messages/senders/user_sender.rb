@@ -1,12 +1,12 @@
-class UserCreatedSender
+class UserSender
   include MqConnector::Sender
 
-  def self.send_message(user)
-    channel = create_channel
-    exchange = channel.topic('events')
+  def self.user_created(user)
+    channel = create_channel auto_recovery: true
+    exchange = channel.topic('events', durable: true)
 
     message = build_message(user)
-    exchange.publish message, routing_key: 'user.created'
+    exchange.publish message, routing_key: 'user.created', persistent: true
 
     log_message(user.id)
     channel.close
