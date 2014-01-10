@@ -1,4 +1,4 @@
-class UserSender
+class UsersSender
   include MqConnector::Sender
 
   def self.user_created(user)
