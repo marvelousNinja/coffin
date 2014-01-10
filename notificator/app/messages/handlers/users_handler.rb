@@ -1,4 +1,4 @@
-class UserHandler
+class UsersHandler
   include MqConnector::Handler
 
   def self.handle
