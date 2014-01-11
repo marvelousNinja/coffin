@@ -6,6 +6,8 @@ Notificator::Application.routes.draw do
     match 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session, :via => [:get, :delete]
   end
 
+  root to: redirect('/admin')
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
