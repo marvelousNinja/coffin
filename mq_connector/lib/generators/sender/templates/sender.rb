@@ -2,10 +2,12 @@ class <%= file_name.camelize %>Sender
   include MqConnector::Sender
 
   def self.send_message(message)
-    ch  = create_channel
-    q   = ch.queue("<%= file_name %>", :auto_delete => true)
-    x   = ch.default_exchange
+    channel = create_channel auto_recovery: true
+    exchange = channel.topic('events', durable: true)
 
-    x.publish message, :routing_key => q.name
+    exchange.publish message, routing_key: '<%= file_name %>', persistent: true
+
+    puts "Sent message: #{message}"
+    channel.close
   end
 end

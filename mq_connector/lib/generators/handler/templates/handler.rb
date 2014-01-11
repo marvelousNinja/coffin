@@ -2,12 +2,15 @@ class <%= file_name.camelize %>Handler
   include MqConnector::Handler
 
   def self.handle
-    ch  = create_channel
-    q   = ch.queue("<%= file_name %>", :auto_delete => true)
-    x   = ch.default_exchange
+    channel  = create_channel auto_recovery: true
+    exchange = channel.topic('events', durable: true)
 
-    q.subscribe do |metadata, payload|
-      puts "Received a message: #{payload}."
+    queue = channel.queue('<%= file_name %>', durable: true).bind(exchange, routing_key: '<%= file_name %>')
+
+    queue.subscribe do |metadata, payload|
+      puts "Received a message: #{payload}"
     end
   end
 end
+
+
