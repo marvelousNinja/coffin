@@ -4,7 +4,7 @@ class CreateProfiles < ActiveRecord::Migration
       t.string :name
       t.string :middle_name
       t.string :surname
-      t.string :previous_name
+      t.string :previous_surname
       t.string :gender
 
       t.date :birthdate
