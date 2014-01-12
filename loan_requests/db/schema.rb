@@ -11,19 +11,80 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140112014135) do
+ActiveRecord::Schema.define(version: 20140112162519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "hstore"
 
+  create_table "addresses", force: true do |t|
+    t.string   "address_type"
+    t.string   "country"
+    t.string   "zip_code"
+    t.string   "address_line"
+    t.string   "phone"
+    t.integer  "loan_request_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "documents", force: true do |t|
+    t.string   "document_type"
+    t.string   "series"
+    t.integer  "number"
+    t.string   "personal_number"
+    t.string   "issued_by"
+    t.date     "issued_at"
+    t.date     "expires_at"
+    t.string   "latin_name"
+    t.string   "latin_surname"
+    t.integer  "loan_request_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobs", force: true do |t|
+    t.string   "company_name"
+    t.string   "upid"
+    t.string   "working_phone"
+    t.string   "personnel_department_phone"
+    t.string   "accounting_department_phone"
+    t.string   "position"
+    t.date     "empoyed_at"
+    t.integer  "loan_request_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "loan_requests", force: true do |t|
-    t.string   "email"
-    t.string   "name"
     t.integer  "sum"
+    t.string   "interval"
+    t.string   "current_location_type"
+    t.integer  "dependants_count"
+    t.integer  "average_income"
+    t.boolean  "has_real_estate"
+    t.boolean  "has_car"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "name"
+    t.string   "middle_name"
+    t.string   "surname"
+    t.string   "previous_name"
+    t.string   "gender"
+    t.date     "birthdate"
+    t.string   "origin_country"
+    t.string   "birthplace"
+    t.string   "education"
+    t.string   "marital_status"
+    t.string   "mobile_phone"
+    t.string   "email"
+    t.integer  "loan_request_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
