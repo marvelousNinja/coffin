@@ -15,3 +15,5 @@ gem 'auth_lib', path: '../auth_lib'
 gem 'mq_connector', path: '../mq_connector'
 gem 'rails_admin'
 gem 'paper_trail'
+
+gem 'state_machine'
