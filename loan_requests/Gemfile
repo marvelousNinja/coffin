@@ -18,4 +18,5 @@ gem 'paper_trail'
 
 gem 'state_machine'
 
+gem 'enumerize'
 gem 'pry-nav'
