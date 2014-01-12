@@ -1,6 +1,9 @@
 # RailsAdmin config file. Generated on January 12, 2014 01:36
 # See github.com/sferik/rails_admin for more informations
 
+# Fix for PaperTrail usage
+Version = ::PaperTrail::Version
+
 RailsAdmin.config do |config|
 
 
