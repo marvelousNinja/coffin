@@ -8,6 +8,6 @@
 User.delete_all
 
 request_approver = User.create! provider: :system,
-  email: 'approver@system.com',
+  email: 'approval@bot.com',
   access_token: :none,
   uid: 1

@@ -17,3 +17,5 @@ gem 'rails_admin'
 gem 'paper_trail'
 
 gem 'state_machine'
+
+gem 'pry-nav'
