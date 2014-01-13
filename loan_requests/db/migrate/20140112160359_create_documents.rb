@@ -3,7 +3,7 @@ class CreateDocuments < ActiveRecord::Migration
     create_table :documents do |t|
       t.string :document_type
       t.string :series
-      t.integer :number
+      t.string :number
       t.string :personal_number
       t.string :issued_by
       t.date :issued_at

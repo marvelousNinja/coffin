@@ -1,5 +1,6 @@
 class Document < ActiveRecord::Base
-  include Concerns::InvisibleModel
-  belongs_to :loan_request
-  # document_type -> passport, or something else?
+  include Concerns::Document::Relationships
+  include Concerns::Document::Enumerations
+  include Concerns::Document::Validations
+  include Concerns::Document::RailsAdmin
 end
