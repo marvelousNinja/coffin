@@ -7,8 +7,8 @@ class CreateLoanRequests < ActiveRecord::Migration
       t.string :current_location_type
       t.integer :dependants_count
       t.integer :average_income
-      t.boolean :has_real_estate
-      t.boolean :has_car
+      t.boolean :has_a_real_estate
+      t.boolean :has_a_car
       t.boolean :lives_by_registration_address
 
       t.timestamps
