@@ -1,4 +1,5 @@
 class Job < ActiveRecord::Base
-  include Concerns::InvisibleModel
-  belongs_to :loan_request
+  include Concerns::Job::Relationships
+  include Concerns::Job::Validations
+  include Concerns::Job::RailsAdmin
 end

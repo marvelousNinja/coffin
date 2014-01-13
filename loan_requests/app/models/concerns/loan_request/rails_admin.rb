@@ -13,6 +13,8 @@ module Concerns::LoanRequest::RailsAdmin
         field :lives_by_registration_address
         field :current_location_type
         field :current_address
+
+        field :doesnt_have_a_job
         field :job
 
         field :dependants_count

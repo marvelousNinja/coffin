@@ -10,6 +10,7 @@ class CreateLoanRequests < ActiveRecord::Migration
       t.boolean :has_a_real_estate
       t.boolean :has_a_car
       t.boolean :lives_by_registration_address
+      t.boolean :doesnt_have_a_job
 
       t.timestamps
     end

@@ -7,7 +7,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :personnel_department_phone
       t.string :accounting_department_phone
       t.string :position
-      t.date :empoyed_at
+      t.date :employed_at
 
       t.integer :loan_request_id
 

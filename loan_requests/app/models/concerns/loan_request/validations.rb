@@ -2,8 +2,9 @@ module Concerns::LoanRequest::Validations
   extend ActiveSupport::Concern
 
   included do
-    validates :profile, :document, :registration_address, :job, presence: true
-    validates :current_address, :presence => true, :unless => 'lives_by_registration_address'
+    validates :profile, :document, :registration_address, presence: true
+    validates :current_address, :presence => true, :unless => :lives_by_registration_address?
+    validates :job, :presence => true, :unless => :doesnt_have_a_job?
 
     validates :sum, presence: true, numericality: { only_integer: true,
       greater_than: 500_000,
