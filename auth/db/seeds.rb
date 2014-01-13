@@ -10,6 +10,7 @@
 ## Roles and permissions
 Role.delete_all
 User.delete_all
+Permission.delete_all
 Doorkeeper::Application.delete_all
 
 roles = Role.create! [
@@ -36,13 +37,13 @@ users = User.create! [
 applications = [
 	{
     name: 'Notificator',
-    redirect_uri: 'http://localhost:3002/users/centralized_auth/callback',
+    redirect_uri: 'http://localhost:3002/users/auth/centralized_auth/callback',
     uid: 'e7a1c7352cd75495632952541c5c4b58f48e4b3d88f73462b73e85ed0a91d21b',
     secret: '6326006f72d65ad48e5d70047ec7e42cdcf6f627f54459350107d5ffec277cdb'
 	},
   {
     name: 'Loan Requests',
-    redirect_uri: 'http://localhost:3003/users/centralized_auth/callback',
+    redirect_uri: 'http://localhost:3003/users/auth/centralized_auth/callback',
     uid: '5010e13ff2c42dce1cb1f76e406593bced8813799436e01ab23407317eec8747',
     secret: 'e2ceabd3d63f63af2b40248d2570e6efc5121be36456e6afc87c5c96d8235a7b'
   }

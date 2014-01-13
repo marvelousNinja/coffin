@@ -16,12 +16,12 @@ class Ability
     Rails.cache.read([:user, :permissions, @user.id])
   end
 
-  def cache_permission_options(permission_options)
-    Rails.cache.write([:user, :permissions, @user.id], permission_options)
+  def cache_permission_options(permissions)
+    Rails.cache.write([:user, :permissions, @user.id], permissions)
   end
 
-  def set_permissions(permission_options)
-    permission_options.each { |options| can options[:action], options[:subject], options[:filters] }
+  def set_permissions(permissions)
+    permissions.each { |options| can options[:action], options[:subject], options[:filters] }
   end
 
   def build_permission_options
