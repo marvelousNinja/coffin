@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20140112162519) do
     t.string   "name"
     t.string   "middle_name"
     t.string   "surname"
-    t.string   "previous_name"
+    t.string   "previous_surname"
     t.string   "gender"
     t.date     "birthdate"
     t.string   "origin_country"

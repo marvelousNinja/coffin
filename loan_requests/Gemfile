@@ -19,4 +19,6 @@ gem 'paper_trail'
 gem 'state_machine'
 
 gem 'enumerize'
+gem 'date_validator'
+gem 'countries'
 gem 'pry-nav'

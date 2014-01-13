@@ -60,7 +60,12 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    countries (0.9.3)
+      currencies (~> 0.4.2)
+    currencies (0.4.2)
     daemons (1.1.9)
+    date_validator (0.7.0)
+      activemodel (>= 3)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -210,6 +215,8 @@ PLATFORMS
 DEPENDENCIES
   auth_lib!
   coffee-rails (~> 4.0.0)
+  countries
+  date_validator
   enumerize
   jbuilder (~> 1.2)
   jquery-rails
