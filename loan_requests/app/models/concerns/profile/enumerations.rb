@@ -4,15 +4,28 @@ module Concerns::Profile::Enumerations
   included do
     extend Enumerize
 
-    GENDERS = ['male', 'female']
+    GENDERS = %w(
+      male
+      female)
     enumerize :gender, in: GENDERS, default: GENDERS.first
 
-    MARITAL_STATUSES = ['single', 'widowed', 'divorced', 'married', 'cohabiting']
+    MARITAL_STATUSES = %w(
+      single
+      widowed
+      divorced
+      married
+      cohabiting)
     enumerize :marital_status, in: MARITAL_STATUSES, default: MARITAL_STATUSES.first
 
-    EDUCATIONS = [
-      'preschool', 'general_basic', 'general_secondary', 'vocational',
-      'secondary_special', 'incomplete_higher', 'higher', 'postgraduate']
+    EDUCATIONS = %w(
+      preschool
+      general_basic
+      general_secondary
+      vocational
+      secondary_special
+      incomplete_higher
+      higher
+      postgraduate)
     enumerize :education, in: EDUCATIONS, default: EDUCATIONS.first
 
     enumerize :origin_country, in: Country.all.map(&:first)
