@@ -15,7 +15,6 @@ ActiveRecord::Schema.define(version: 20140112162519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-  enable_extension "hstore"
 
   create_table "addresses", force: true do |t|
     t.string   "address_type"
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140112162519) do
     t.string   "address_line"
     t.date     "registered_at"
     t.string   "phone"
+    t.string   "type"
     t.integer  "loan_request_id"
     t.datetime "created_at"
     t.datetime "updated_at"

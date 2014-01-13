@@ -8,6 +8,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.date :registered_at
       t.string :phone
 
+      t.string :type
       t.integer :loan_request_id
 
       t.timestamps

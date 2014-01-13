@@ -9,6 +9,6 @@ module Concerns::Address::Enumerations
       current)
     enumerize :address_type, in: ADDRESS_TYPES, default: ADDRESS_TYPES.first
 
-    enumerize :country, in: Country.all.map(&:first)
+    enumerize :country, in: Country.all.map(&:first), default: 'Belarus'
   end
 end
