@@ -7,9 +7,10 @@ module Concerns::GeneratesPassword
     before_validation :generate_password
 
     def generate_password
-      @generated_password = Devise.friendly_token.first(8)
-      self.password = @generated_password
-      self.password_confirmation = @generated_password
+      unless password
+        self.generated_password = Devise.friendly_token.first(8)
+        self.password = generated_password
+      end
     end
   end
 end

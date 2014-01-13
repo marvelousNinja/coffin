@@ -10,6 +10,7 @@ class UsersSender
 
     log_message(user.id)
     channel.close
+    connection.close
   end
 
   private
