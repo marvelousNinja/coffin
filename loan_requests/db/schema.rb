@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20140112162519) do
     t.integer  "average_income"
     t.boolean  "has_real_estate"
     t.boolean  "has_car"
+    t.boolean  "lives_by_registration_address"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "status"
