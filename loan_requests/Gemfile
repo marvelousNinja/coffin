@@ -22,3 +22,5 @@ gem 'enumerize'
 gem 'date_validator'
 gem 'countries'
 gem 'pry-nav'
+
+gem 'rails_admin_process', path: '../rails_admin_process'

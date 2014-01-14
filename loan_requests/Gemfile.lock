@@ -16,6 +16,12 @@ PATH
       rails (~> 4.0.2)
       thin
 
+PATH
+  remote: ../rails_admin_process
+  specs:
+    rails_admin_process (0.0.1)
+      rails (~> 4.0.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -226,6 +232,7 @@ DEPENDENCIES
   pry-nav
   rails (= 4.0.2)
   rails_admin
+  rails_admin_process!
   sass-rails (~> 4.0.0)
   state_machine
   turbolinks

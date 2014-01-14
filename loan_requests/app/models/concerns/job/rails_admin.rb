@@ -3,6 +3,8 @@ module Concerns::Job::RailsAdmin
 
   included do
     rails_admin do
+      visible false
+
       edit do
         field :company_name
         field :upid

@@ -27,7 +27,7 @@ RailsAdmin.config do |config|
   config.audit_with :paper_trail, 'User'
 
   # Display empty fields in show views:
-  # config.compact_show_view = false
+  config.compact_show_view = false
 
   # Number of default rows per-page:
   # config.default_items_per_page = 20
@@ -40,6 +40,27 @@ RailsAdmin.config do |config|
 
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
+
+  # Available actions
+  config.actions do
+    # root actions
+    dashboard                     # mandatory
+    # collection actions
+    index                         # mandatory
+    new
+    export
+    history_index
+    bulk_delete
+    # member actions
+    show
+    edit
+    delete
+    history_show
+    show_in_app
+
+    security_process
+    committee_process
+  end
 
 
   ################  Model configuration  ################

@@ -22,6 +22,10 @@ module Concerns::LoanRequest::RailsAdmin
         field :has_a_real_estate
         field :has_a_car
       end
+
+      security_process do
+        field :status_event, :enum
+      end
     end
   end
 end

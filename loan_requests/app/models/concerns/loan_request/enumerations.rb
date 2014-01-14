@@ -19,5 +19,9 @@ module Concerns::LoanRequest::Enumerations
       other)
 
     enumerize :current_location_type, in: LOCATION_TYPES, default: LOCATION_TYPES.first
+
+    def status_event_enum
+      self.status_events
+    end
   end
 end
