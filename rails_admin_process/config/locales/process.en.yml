@@ -1,0 +1,16 @@
+
+en:
+  admin:
+    form:
+      process:
+        approve: 'Approve'
+        reject: 'Reject'
+        send_to_committe: 'Send to committe'
+    actions:
+      process:
+        title: "Process"
+        menu: "Process for %{model_label} '%{object_label}'"
+        breadcrumb: "Process"
+        link: "Process"
+        bulk_link: "Process selected %{model_label_plural}"
+        done: "Processed"
