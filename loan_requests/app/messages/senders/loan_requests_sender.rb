@@ -7,7 +7,7 @@ class LoanRequestsSender
 
     exchange.publish request.attributes.to_json, routing_key: 'loan_request.created', persistent: true
 
-    puts "Loan request has been created for #{request.email}"
+    puts "Loan request has been created for #{request}"
 
     channel.close
   end
@@ -18,7 +18,7 @@ class LoanRequestsSender
 
     exchange.publish request.attributes.to_json, routing_key: 'loan_request.approved', persistent: true
 
-    puts "Loan request has been approved for #{request.email}"
+    puts "Loan request has been approved for #{request}"
 
     channel.close
   end
@@ -29,7 +29,7 @@ class LoanRequestsSender
 
     exchange.publish request.attributes.to_json, routing_key: 'loan_request.rejected', persistent: true
 
-    puts "Loan request has been rejected for #{request.email}"
+    puts "Loan request has been rejected for #{request}"
 
     channel.close
   end
