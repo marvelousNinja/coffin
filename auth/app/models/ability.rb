@@ -7,7 +7,7 @@ class Ability
   end
 
   def permission_options
-    @permission_options ||= get_cached_permission_options || build_permission_options || []
+    @permission_options ||= build_permission_options#get_cached_permission_options || build_permission_options || []
   end
 
   protected
@@ -16,8 +16,8 @@ class Ability
     Rails.cache.read([:user, :permissions, @user.id])
   end
 
-  def cache_permission_options(permissions)
-    Rails.cache.write([:user, :permissions, @user.id], permissions)
+  def cache_permission_options(*permissions)
+    Rails.cache.write([:user, :permissions, @user.id], [*permissions])
   end
 
   def set_permissions(permissions)

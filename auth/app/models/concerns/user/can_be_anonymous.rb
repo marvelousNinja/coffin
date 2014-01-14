@@ -3,7 +3,6 @@ module Concerns::User::CanBeAnonymous
 
   included do
     def self.anonymous
-      binding.pry
       User.find_by email: 'anonymous@mail.com'
     end
   end

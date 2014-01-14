@@ -21,7 +21,15 @@ roles = Role.create! [
 			Permission.new(action: :manage, subject: :all),
 			Permission.new(action: :access, subject: :rails_admin)
 		]
-	}
+	},
+  {
+    name: :anonymous,
+    permissions: [
+      Permission.new(action: :dashboard),
+      Permission.new(action: :access, subject: :rails_admin),
+      Permission.new(action: :create, subject: 'LoanRequest')
+    ]
+  }
 ]
 
 users = User.create! [
@@ -36,7 +44,7 @@ users = User.create! [
     email: 'anonymous@mail.com',
     password: 'anonymous',
     roles: [
-      Role.find_by(name: :admin)
+      Role.find_by(name: :anonymous)
     ]
   }
 ]

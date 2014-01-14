@@ -25,7 +25,15 @@ class Ability
         options['filters']['user_id'] = @user.id
       end
 
-      can options['action'].try(:to_sym), options['subject'].try(:to_sym), options['filters'].try(:deep_symbolize_keys)
+      if subject = options['subject']
+        if subject.camelize == subject
+          options['subject'] = subject.constantize
+        else
+          options['subject'] = options['subject'].try(:to_sym)
+        end
+      end
+
+      can options['action'].try(:to_sym), options['subject'], options['filters'].try(:deep_symbolize_keys)
     end
   end
 end
