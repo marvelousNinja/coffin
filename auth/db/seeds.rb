@@ -31,7 +31,14 @@ users = User.create! [
 		roles: [
 			Role.find_by(name: :admin)
 		]
-	}
+	},
+  {
+    email: 'anonymous@mail.com',
+    password: 'anonymous',
+    roles: [
+      Role.find_by(name: :admin)
+    ]
+  }
 ]
 
 applications = [

@@ -1,4 +1,4 @@
-module Concerns::HasRoles
+module Concerns::User::HasRoles
 	extend ActiveSupport::Concern
 
 	included do

@@ -1,4 +1,4 @@
-module Concerns::SendsMessages
+module Concerns::User::SendsMessages
   extend ActiveSupport::Concern
 
   included do

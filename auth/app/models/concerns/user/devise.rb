@@ -1,4 +1,4 @@
-module Concerns::Devise
+module Concerns::User::Devise
   extend ActiveSupport::Concern
 
   included do

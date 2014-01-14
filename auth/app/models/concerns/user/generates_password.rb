@@ -1,4 +1,4 @@
-module Concerns::GeneratesPassword
+module Concerns::User::GeneratesPassword
   extend ActiveSupport::Concern
 
   included do

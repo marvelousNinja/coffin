@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-	include Concerns::HasRoles
-  include Concerns::GeneratesPassword
-  include Concerns::Devise
-  include Concerns::SendsMessages
+	include Concerns::User::HasRoles
+  include Concerns::User::GeneratesPassword
+  include Concerns::User::Devise
+  include Concerns::User::SendsMessages
+  include Concerns::User::CanBeAnonymous
   has_paper_trail
 end
