@@ -9,7 +9,7 @@ class UsersHandler
 
     queue.subscribe do |metadata, payload|
       user_data = parse_message(payload)
-      notify_user(user_data)
+      #notify_user(user_data)
       log_message
     end
   end
