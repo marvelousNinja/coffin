@@ -26,6 +26,10 @@ module Concerns::LoanRequest::RailsAdmin
       security_process do
         field :status_event, :enum
       end
+
+      committee_process do
+        field :status_event, :enum
+      end
     end
   end
 end
