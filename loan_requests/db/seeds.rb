@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 User.delete_all
+LoanRequest.delete_all
 
 request_approver = User.create! provider: :system,
   email: 'approval@bot.com',
