@@ -20,8 +20,10 @@ module Concerns::LoanRequest::Enumerations
 
     enumerize :current_location_type, in: LOCATION_TYPES, default: LOCATION_TYPES.first
 
+    enumerize :status_event, in: self.state_machines[:status].events.map(&:name)
+
     def status_event_enum
-      self.status_events
+      self.class.enumerized_attributes[:status_event].options.keep_if { |pair| self.status_events.map(&:to_s).include? pair[1] }
     end
   end
 end
