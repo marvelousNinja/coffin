@@ -36,7 +36,18 @@ roles = Role.create! [
       Permission.new(action: :dashboard),
       Permission.new(action: :access, subject: :rails_admin),
       Permission.new(action: :index, subject: 'LoanRequest'),
-      Permission.new(action: :update, subject: 'LoanRequest')
+      Permission.new(action: :update, subject: 'LoanRequest'),
+      Permission.new(action: :security_process, subject: 'LoanRequest')
+    ]
+  },
+  {
+    name: :committee,
+    permissions: [
+      Permission.new(action: :dashboard),
+      Permission.new(action: :access, subject: :rails_admin),
+      Permission.new(action: :index, subject: 'LoanRequest'),
+      Permission.new(action: :update, subject: 'LoanRequest'),
+      Permission.new(action: :committee_process, subject: 'LoanRequest')
     ]
   }
 ]
@@ -61,6 +72,13 @@ users = User.create! [
     password: 'security',
     roles: [
       Role.find_by(name: :security)
+    ]
+  },
+  {
+    email: 'committee@mail.com',
+    password: 'committee',
+    roles: [
+      Role.find_by(name: :committee)
     ]
   }
 ]
