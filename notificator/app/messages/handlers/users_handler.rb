@@ -2,15 +2,16 @@ class UsersHandler
   include MqConnector::Handler
 
   def self.handle
-    channel  = create_channel auto_recovery: true
-    exchange = channel.topic('events', durable: true)
+    self.connect do |connection ,channel|
+      exchange = channel.topic('events', durable: true)
 
-    queue = channel.queue('notificator', durable: true).bind(exchange, routing_key: 'user.created')
+      queue = channel.queue('notificator', durable: true).bind(exchange, routing_key: 'user.created')
 
-    queue.subscribe do |metadata, payload|
-      user_data = parse_message(payload)
-      #notify_user(user_data)
-      log_message
+      queue.subscribe do |metadata, payload|
+        user_data = parse_message(payload)
+        #notify_user(user_data)
+        log_message
+      end
     end
   end
 
