@@ -5,12 +5,14 @@ class UsersHandler
     self.connect do |connection ,channel|
       exchange = channel.topic('events', durable: true)
 
+      channel.prefetch(1)
+
       queue = channel.queue('notificator', durable: true).bind(exchange, routing_key: 'user.created')
 
       queue.subscribe do |metadata, payload|
         user_data = parse_message(payload)
         #notify_user(user_data)
-        log_message
+        puts "Received user.created for User##{user_data['id']}"
       end
     end
   end
@@ -19,10 +21,6 @@ class UsersHandler
 
   def self.parse_message(body)
     JSON.load(body)
-  end
-
-  def self.log_message
-    puts "Received user.created"
   end
 
   def self.notify_user(data)
