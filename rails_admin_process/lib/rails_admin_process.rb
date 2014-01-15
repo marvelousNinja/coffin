@@ -20,9 +20,8 @@ module RailsAdmin
         RailsAdmin::Config::Actions.register(self)
 
         register_instance_option :visible? do
-          true
-          #obj = bindings[:object]
-          #!(obj.approved? || obj.rejected? || obj.awaiting_for_committee_approval?) && authorized?
+          obj = bindings[:object]
+          !(obj.approved? || obj.rejected? || obj.awaiting_for_committee_approval?) && authorized?
         end
 
         register_instance_option :object_level do
@@ -84,9 +83,8 @@ module RailsAdmin
         RailsAdmin::Config::Actions.register(self)
 
         register_instance_option :visible? do
-          true
-          #obj = bindings[:object]
-          #!(obj.approved? || obj.rejected? || obj.awaiting_for_security_check?) && authorized?
+          obj = bindings[:object]
+          !(obj.approved? || obj.rejected? || obj.awaiting_for_security_check?) && authorized?
         end
 
         register_instance_option :object_level do
