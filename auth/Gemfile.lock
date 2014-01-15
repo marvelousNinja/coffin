@@ -34,7 +34,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 0.3.37)
     amq-protocol (1.9.2)
-    amqp (1.1.8)
+    amqp (1.2.0)
       amq-protocol (>= 1.9.2)
       eventmachine
     arel (4.0.1)
