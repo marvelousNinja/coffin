@@ -21,19 +21,41 @@ class Ability
 
   def build_permissions(permission_options)
     permission_options.each do |options|
-      if options['filters'].present? && options['filters']['user_id'].to_i == @user.uid
-        options['filters']['user_id'] = @user.id
-      end
+      action = build_action options
+      subject = build_subject options
+      filters = build_filters options
 
-      if subject = options['subject']
-        if subject.camelize == subject
-          options['subject'] = subject.constantize
-        else
-          options['subject'] = options['subject'].try(:to_sym)
-        end
-      end
-
-      can options['action'].try(:to_sym), options['subject'], options['filters'].try(:deep_symbolize_keys)
+      can action, subject, filters
     end
+  end
+
+  def build_filters(options)
+    filters = options['filters']
+    filters.deep_symbolize_keys!
+    if filters[:user_id] && filters[:user_id].to_i == @user.uid.to_i
+      filters[:user_id] = @user.id
+    end
+    filters
+  end
+
+  def build_action(options)
+    options['action'].to_sym
+  end
+
+  def build_subject(options)
+    subject = nil
+    raw_subject = options['subject']
+    if raw_subject.present?
+      if raw_subject.to_s.camelize == raw_subject.to_s
+        if subject = suppress(NameError) { raw_subject.to_s.camelize.constantize }
+          subject
+        else
+          subject = raw_subject
+        end
+      else
+        subject = raw_subject.to_sym
+      end
+    end
+    subject
   end
 end
