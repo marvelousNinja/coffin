@@ -26,28 +26,48 @@ class Ability
 
   def build_permission_options
     @user.permissions.map do |permission|
-      options = {
-        action: permission.action.to_sym
-      }
+      action = build_action permission
+      subject = build_subject permission
+      filters = build_filters permission
+      { action: action, subject: subject, filters: filters }
+    end
+  end
 
-      if permission.subject.present?
-        if permission.subject.capitalize == permission.subject
-          options[:subject] = permission.subject.constantize
-          if permission.owning_required?
-            options[:filters] = {
-              user_id: @user.id
-            }
-          elsif permission.subject_id.present?
-            options[:filters] = {
-              id: permission.subject_id
-            }
-          end
+  def build_action(permission)
+    permission.action.to_sym
+  end
+
+  def build_filters(permission)
+    filters = {}
+
+    if permission.owning_required
+      filters[:user_id] = @user_id
+    end
+
+    if permission.subject_id.present?
+      filters[:id] = permission.subject_id
+    end
+
+    permission.conditions.each do |condition|
+      filters[condition.field.to_sym] = condition.value
+    end
+
+    filters
+  end
+
+  def build_subject(permission)
+    subject = nil
+    if permission.subject.present?
+      if permission.subject.to_s.camelize == permission.subject
+        klass = suppress(NameError) { permission.subject.to_s.camelize.constantize }
+        if klass
+          subject = klass
         else
-          options[:subject] = permission.subject.to_sym
+          subject = permission.subject
         end
+      else
+        subject = permission.subject.to_sym
       end
-      cache_permission_options(options)
-      options
     end
   end
 end

@@ -11,6 +11,7 @@
 Role.delete_all
 User.delete_all
 Permission.delete_all
+Condition.delete_all
 Doorkeeper::Application.delete_all
 
 roles = Role.create! [
@@ -35,9 +36,21 @@ roles = Role.create! [
     permissions: [
       Permission.new(action: :dashboard),
       Permission.new(action: :access, subject: :rails_admin),
-      Permission.new(action: :index, subject: 'LoanRequest'),
-      Permission.new(action: :update, subject: 'LoanRequest'),
-      Permission.new(action: :security_process, subject: 'LoanRequest')
+      Permission.new(action: :index, subject: 'LoanRequest',
+        conditions: [
+          Condition.new(field: :status, value: :awaiting_for_security_check)
+        ]
+      ),
+      Permission.new(action: :update, subject: 'LoanRequest',
+        conditions: [
+          Condition.new(field: :status, value: :awaiting_for_security_check)
+        ]
+      ),
+      Permission.new(action: :security_process, subject: 'LoanRequest',
+        conditions: [
+          Condition.new(field: :status, value: :awaiting_for_security_check)
+        ]
+      )
     ]
   },
   {
