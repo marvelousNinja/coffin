@@ -62,6 +62,10 @@ RailsAdmin.config do |config|
     committee_process
   end
 
+  config.navigation_static_links = {
+    'English' => '?locale=en',
+    'Русский' => '?locale=ru'
+  }
 
   ################  Model configuration  ################
 

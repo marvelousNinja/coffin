@@ -4,6 +4,7 @@ PATH
     auth_lib (0.0.1)
       cancan
       devise
+      devise-russian
       omniauth
       omniauth-oauth2
       rails (~> 4.0.2)
@@ -78,12 +79,14 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    devise-russian (2.0.1.1)
+      devise
     enumerize (0.7.0)
       activesupport (>= 3.2)
     erubis (2.7.0)
     eventmachine (1.0.3)
     execjs (2.0.2)
-    faraday (0.8.8)
+    faraday (0.8.9)
       multipart-post (~> 1.2.0)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
@@ -102,7 +105,7 @@ GEM
     jquery-ui-rails (4.1.1)
       railties (>= 3.1.0)
     json (1.8.1)
-    jwt (0.1.8)
+    jwt (0.1.10)
       multi_json (>= 1.5)
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
