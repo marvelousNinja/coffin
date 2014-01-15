@@ -17,6 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", "~> 4.0.2"
   s.add_dependency 'devise'
+  s.add_dependency 'devise-russian'
   s.add_dependency 'cancan'
   s.add_dependency 'omniauth'
   s.add_dependency 'omniauth-oauth2'

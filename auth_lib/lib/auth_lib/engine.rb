@@ -1,4 +1,5 @@
 require 'devise'
+require 'devise-russian'
 require 'cancan'
 require 'omniauth'
 require 'omniauth-oauth2'
