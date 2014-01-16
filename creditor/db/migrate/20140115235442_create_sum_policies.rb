@@ -4,6 +4,8 @@ class CreateSumPolicies < ActiveRecord::Migration
       t.integer :min
       t.integer :max
 
+      t.integer :credit_product_id
+
       t.timestamps
     end
   end

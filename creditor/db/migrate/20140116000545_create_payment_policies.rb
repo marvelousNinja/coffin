@@ -3,6 +3,8 @@ class CreatePaymentPolicies < ActiveRecord::Migration
     create_table :payment_policies do |t|
       t.string :type
 
+      t.integer :credit_product_id
+
       t.timestamps
     end
   end

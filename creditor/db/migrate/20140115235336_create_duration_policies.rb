@@ -5,6 +5,8 @@ class CreateDurationPolicies < ActiveRecord::Migration
       t.integer :max
       t.string :units
 
+      t.integer :credit_product_id
+
       t.timestamps
     end
   end

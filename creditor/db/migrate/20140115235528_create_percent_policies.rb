@@ -6,6 +6,8 @@ class CreatePercentPolicies < ActiveRecord::Migration
       t.boolean :fixed
       t.string :period
 
+      t.integer :credit_product_id
+
       t.timestamps
     end
   end
