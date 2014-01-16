@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
 CreditProduct.delete_all
 SumPolicy.delete_all
 PercentPolicy.delete_all
@@ -64,5 +56,11 @@ credit_products = CreditProduct.create! [
     duration_policy: DurationPolicy.first,
     fine_policy: FinePolicy.first,
     payment_policy: PaymentPolicy.first
+  }
+]
+
+loan_agreements = LoanAgreement.create! [
+  {
+    credit_product: CreditProduct.first
   }
 ]

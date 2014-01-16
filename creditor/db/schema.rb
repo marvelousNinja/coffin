@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116110218) do
+ActiveRecord::Schema.define(version: 20140116011109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,26 +28,14 @@ ActiveRecord::Schema.define(version: 20140116110218) do
     t.datetime "updated_at"
   end
 
-  create_table "durations", force: true do |t|
-    t.integer  "loan_agreement_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fines", force: true do |t|
-    t.integer  "loan_agreement_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "loan_agreements", force: true do |t|
+    t.integer  "initial_loan"
+    t.decimal  "loan_percent"
+    t.integer  "duration"
+    t.decimal  "fine_percent"
+    t.string   "payment_method"
+    t.decimal  "advanced_repayment_percent"
     t.integer  "credit_product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "percents", force: true do |t|
-    t.integer  "loan_agreement_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,14 +49,6 @@ ActiveRecord::Schema.define(version: 20140116110218) do
     t.string   "type"
     t.text     "payment_methods",           array: true
     t.boolean  "allows_advanced_repayment"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sums", force: true do |t|
-    t.integer  "loan_agreement_id"
-    t.integer  "initial"
-    t.integer  "withdrawn"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
