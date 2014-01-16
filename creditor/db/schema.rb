@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116001825) do
+ActiveRecord::Schema.define(version: 20140116011109) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,13 +19,19 @@ ActiveRecord::Schema.define(version: 20140116001825) do
 
   create_table "credit_products", force: true do |t|
     t.string   "name"
+    t.integer  "sum_policy_id"
+    t.integer  "duration_policy_id"
+    t.integer  "fine_policy_id"
+    t.integer  "payment_policy_id"
+    t.integer  "percent_policy_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "credit_products_policies", id: false, force: true do |t|
-    t.integer "credit_product_id", null: false
-    t.integer "policy_id",         null: false
+  create_table "loan_agreements", force: true do |t|
+    t.integer  "credit_product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "policies", force: true do |t|

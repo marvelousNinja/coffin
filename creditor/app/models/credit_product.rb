@@ -1,7 +1,9 @@
 class CreditProduct < ActiveRecord::Base
-  has_and_belongs_to_many :duration_policies
-  has_and_belongs_to_many :sum_policies
-  has_and_belongs_to_many :percent_policies
-  has_and_belongs_to_many :fine_policies
-  has_and_belongs_to_many :payment_policies
+  belongs_to :duration_policy
+  belongs_to :sum_policy
+  belongs_to :percent_policy
+  belongs_to :fine_policy
+  belongs_to :payment_policy
+
+  has_many :loan_agreements
 end

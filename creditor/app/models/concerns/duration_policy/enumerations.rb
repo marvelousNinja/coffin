@@ -4,7 +4,7 @@ module Concerns::DurationPolicy::Enumerations
   included do
     extend Enumerize
 
-    UNITS = %i(days months years)
+    UNITS = %w(days months years)
     enumerize :units, in: UNITS
   end
 end
