@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20140116011109) do
   end
 
   create_table "loan_agreements", force: true do |t|
-    t.integer  "initial_loan"
+    t.integer  "initial_loan_sum"
     t.decimal  "loan_percent"
     t.integer  "duration"
     t.decimal  "fine_percent"
