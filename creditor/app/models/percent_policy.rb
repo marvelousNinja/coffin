@@ -1,3 +1,2 @@
-class PercentPolicy < ActiveRecord::Base
-  belongs_to :credit_product
+class PercentPolicy < Policy
 end

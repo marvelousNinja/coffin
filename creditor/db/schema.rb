@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116000545) do
+ActiveRecord::Schema.define(version: 20140116001825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,45 +23,18 @@ ActiveRecord::Schema.define(version: 20140116000545) do
     t.datetime "updated_at"
   end
 
-  create_table "duration_policies", force: true do |t|
-    t.integer  "min"
-    t.integer  "max"
+  create_table "credit_products_policies", id: false, force: true do |t|
+    t.integer "credit_product_id", null: false
+    t.integer "policy_id",         null: false
+  end
+
+  create_table "policies", force: true do |t|
+    t.decimal  "min"
+    t.decimal  "max"
+    t.string   "period"
     t.string   "units"
-    t.integer  "credit_product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "fine_policies", force: true do |t|
-    t.decimal  "min"
-    t.decimal  "max"
-    t.string   "period"
-    t.string   "credit_product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "payment_policies", force: true do |t|
-    t.string   "type"
-    t.integer  "credit_product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "percent_policies", force: true do |t|
-    t.decimal  "min"
-    t.decimal  "max"
     t.boolean  "fixed"
-    t.string   "period"
-    t.integer  "credit_product_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sum_policies", force: true do |t|
-    t.integer  "min"
-    t.integer  "max"
-    t.integer  "credit_product_id"
+    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

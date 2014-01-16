@@ -1,3 +1,2 @@
-class SumPolicy < ActiveRecord::Base
-  belongs_to :credit_product
+class SumPolicy < Policy
 end
