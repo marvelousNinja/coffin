@@ -3,6 +3,5 @@ module Concerns::Policy::Relationships
 
   included do
     has_many :credit_products
-    has_many :loan_agreements, :through => :credit_products
   end
 end

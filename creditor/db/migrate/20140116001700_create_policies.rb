@@ -11,6 +11,9 @@ class CreatePolicies < ActiveRecord::Migration
 
       t.string :type
 
+      t.text :payment_methods, array: true
+      t.boolean :allows_advanced_repayment
+
       t.timestamps
     end
   end
