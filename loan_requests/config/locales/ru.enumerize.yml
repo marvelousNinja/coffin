@@ -1,0 +1,43 @@
+ru:
+	enumerize:
+		address:
+			address_type:
+				registration: 	"Регистрации"
+				current:	"Проживания"
+		document:
+			document_type:
+				passport:		"Паспорт"
+				residence_permit:	"Вид на жительство"
+		loan_request:
+			current_location_type:
+				owning_a_flat:		"Собственная квартира"
+      				owning_a_house:		"Собственный дом"
+      				with_relatives:		"Проживаю с родственниками"
+			      	renting:		"Арендую жильё"
+			      	other:			"Другое"
+			interval:
+				several_months:		"Несколько месяцев"
+      				half_year:		"Пол года"
+      				one_year:		"Один год"
+      				several_years:		"Несколько лет"
+		profile:
+			gender:
+				male:		"Мужчина"
+      				female:		"Женщина"
+			marital_status:
+				single:		"Одинок(а)"
+      				widowed:	"Овдовел(а)"
+      				divorced:	"В разводе"
+      				married:	"В браке"
+      				cohabiting:	"В сожительстве"
+			education:
+				preschool:		"Дошкольное"
+      				general_basic:		"Общее базовое"
+      				general_secondary:	"Общее среднее"
+      				vocational:		"Профессионально-техническое"
+      				secondary_special:	"Среднее специальное"
+      				incomplete_higher:	"Незаконченное высшее"
+      				higher:			"Высшее"
+      				postgraduate:		"Последипломное"
+
+

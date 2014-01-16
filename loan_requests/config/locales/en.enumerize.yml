@@ -1,0 +1,43 @@
+en:
+	enumerize:
+		address:
+			address_type:
+				registration: 	"Registration"
+				current:	"Current"
+		document:
+			document_type:
+				passport:		"Passport"
+				residence_permit:	"Residence permit"
+		loan_request:
+			current_location_type:
+				owning_a_flat:		"Owning a flat"
+      				owning_a_house:		"Owning a house"
+      				with_relatives:		"With relatives"
+			      	renting:		"Renting"
+			      	other:			"Other"
+			interval:
+				several_months:		"Several month"
+      				half_year:		"Half year"
+      				one_year:		"One year"
+      				several_years:		"Several years"
+		profile:
+			gender:
+				male:		"Male"
+      				female:		"Female"
+			marital_status:
+				single:		"Single"
+      				widowed:	"Widowed"
+      				divorced:	"Divorced"
+      				married:	"Married"
+      				cohabiting:	"Cohabiting"
+			education:
+				preschool:		"Preschool"
+      				general_basic:		"General basic"
+      				general_secondary:	"General secondary"
+      				vocational:		"Vocational"
+      				secondary_special:	"Secondary special"
+      				incomplete_higher:	"Incomplete higher"
+      				higher:			"Higher"
+      				postgraduate:		"Postgraduate"
+
+
