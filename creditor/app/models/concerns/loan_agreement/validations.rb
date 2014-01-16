@@ -32,7 +32,7 @@ module Concerns::LoanAgreement::Validations
 
     validates :advanced_repayment_percent, :presence => true, :numericality => {
       greater_than_or_equal_to: proc { |agreement| agreement.payment_policy.min },
-      less_than_or_equal_to: proc { |agreement| agreement.payment_policy.min }
+      less_than_or_equal_to: proc { |agreement| agreement.payment_policy.max }
     }, :if => proc { |agreement| agreement.credit_product.present? && agreement.payment_policy.allows_advanced_repayment }
   end
 end
