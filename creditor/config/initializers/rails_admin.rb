@@ -41,6 +41,11 @@ RailsAdmin.config do |config|
   # Label methods for model instances:
   # config.label_methods << :description # Default is [:name, :title]
 
+  # Actions
+  config.actions do
+    all
+    charts
+  end
 
   ################  Model configuration  ################
 

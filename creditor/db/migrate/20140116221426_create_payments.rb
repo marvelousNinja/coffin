@@ -6,6 +6,8 @@ class CreatePayments < ActiveRecord::Migration
       t.date :scheduled_at
       t.boolean :processed, default: false
 
+      t.integer :sum
+
       t.integer :loan_agreement_id
 
       t.timestamps

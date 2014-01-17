@@ -5,6 +5,7 @@ DurationPolicy.delete_all
 User.delete_all
 FinePolicy.delete_all
 PaymentPolicy.delete_all
+Payment.delete_all
 
 sum_policies = SumPolicy.create! [
   {

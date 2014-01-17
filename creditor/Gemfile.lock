@@ -59,6 +59,7 @@ GEM
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
     cancan (1.6.10)
+    chartkick (1.2.1)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -90,8 +91,11 @@ GEM
       multipart-post (~> 1.2.0)
     font-awesome-rails (4.0.3.0)
       railties (>= 3.2, < 5.0)
+    groupdate (1.0.4)
+      activerecord (>= 3.0.0)
     haml (4.0.4)
       tilt
+    hash-deep-merge (0.1.1)
     hashie (2.0.5)
     hike (1.2.3)
     httpauth (0.2.0)
@@ -110,6 +114,9 @@ GEM
     kaminari (0.15.0)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
+    lazy_high_charts (1.5.1)
+      bundler (>= 1.0)
+      hash-deep-merge
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -174,6 +181,10 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 0.9)
       sass-rails (~> 4.0)
+    rails_admin_charts (0.0.12)
+      lazy_high_charts (>= 1.4.3)
+      rails (>= 3.2)
+      rails_admin (> 0)
     railties (4.0.2)
       actionpack (= 4.0.2)
       activesupport (= 4.0.2)
@@ -223,10 +234,12 @@ PLATFORMS
 
 DEPENDENCIES
   auth_lib!
+  chartkick
   coffee-rails (~> 4.0.0)
   countries
   date_validator
   enumerize
+  groupdate
   jbuilder (~> 1.2)
   jquery-rails
   mq_connector!
@@ -235,6 +248,7 @@ DEPENDENCIES
   pry-nav
   rails (= 4.0.2)
   rails_admin
+  rails_admin_charts
   rails_admin_process!
   sass-rails (~> 4.0.0)
   state_machine

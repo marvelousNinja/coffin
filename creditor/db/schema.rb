@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 20140116221426) do
     t.integer  "percent_part"
     t.date     "scheduled_at"
     t.boolean  "processed",         default: false
+    t.integer  "sum"
     t.integer  "loan_agreement_id"
     t.datetime "created_at"
     t.datetime "updated_at"

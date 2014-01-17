@@ -22,5 +22,8 @@ gem 'enumerize'
 gem 'date_validator'
 gem 'countries'
 gem 'pry-nav'
+gem 'rails_admin_charts'
+gem "chartkick"
+gem 'groupdate'
 
 gem 'rails_admin_process', path: '../rails_admin_process'
