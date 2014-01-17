@@ -36,6 +36,8 @@ roles = Role.create! [
     permissions: [
       Permission.new(action: :dashboard),
       Permission.new(action: :access, subject: :rails_admin),
+      Permission.new(action: :state, subject: 'LoanRequest'),
+      Permission.new(action: :all_events, subject: 'LoanRequest'),
       Permission.new(action: :index, subject: 'LoanRequest',
         conditions: [
           Condition.new(field: :status, value: :awaiting_for_security_check)
@@ -60,7 +62,8 @@ roles = Role.create! [
       Permission.new(action: :access, subject: :rails_admin),
       Permission.new(action: :index, subject: 'LoanRequest'),
       Permission.new(action: :update, subject: 'LoanRequest'),
-      Permission.new(action: :committee_process, subject: 'LoanRequest')
+      Permission.new(action: :state, subject: 'LoanRequest'),
+      Permission.new(action: :all_events, subject: 'LoanRequest')
     ]
   }
 ]
