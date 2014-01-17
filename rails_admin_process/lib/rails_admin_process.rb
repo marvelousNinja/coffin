@@ -11,7 +11,7 @@ module RailsAdmin
       module Types
         class Date
           def parse_input(params)
-            params[name] = self.class.normalize(params[name], localized_date_format).try(:to_date) if params[name].present?
+            params[name] = self.class.normalize(params[name], localized_date_format).try(:to_date) || '' if params[name].present?
           end
         end
       end
