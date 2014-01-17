@@ -1,6 +1,10 @@
 module Concerns::RegistrationAddress::RailsAdmin
   extend ActiveSupport::Concern
 
+  def title
+    self.address_line
+  end
+
   included do
     rails_admin do
       visible false

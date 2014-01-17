@@ -1,9 +1,14 @@
 module Concerns::LoanRequest::RailsAdmin
   extend ActiveSupport::Concern
 
+  def title
+    "№ #{self.id}"
+  end
+
   included do
     rails_admin do
       edit do
+        field :status, :state
         field :sum
         field :interval
 
@@ -21,14 +26,6 @@ module Concerns::LoanRequest::RailsAdmin
         field :average_income
         field :has_a_real_estate
         field :has_a_car
-      end
-
-      security_process do
-        field :status_event, :enum
-      end
-
-      committee_process do
-        field :status_event, :enum
       end
     end
   end

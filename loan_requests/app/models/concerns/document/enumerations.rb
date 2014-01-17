@@ -6,7 +6,7 @@ module Concerns::Document::Enumerations
 
     DOCUMENT_TYPES = %w(
       passport
-      residence permit)
+      residence_permit)
     enumerize :document_type, in: DOCUMENT_TYPES, default: DOCUMENT_TYPES.first
   end
 end

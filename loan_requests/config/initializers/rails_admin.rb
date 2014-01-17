@@ -43,23 +43,8 @@ RailsAdmin.config do |config|
 
   # Available actions
   config.actions do
-    # root actions
-    dashboard                     # mandatory
-    # collection actions
-    index                         # mandatory
-    new
-    export
-    history_index
-    bulk_delete
-    # member actions
-    show
-    edit
-    delete
-    history_show
-    show_in_app
-
-    security_process
-    committee_process
+    all
+    state
   end
 
   # Locale

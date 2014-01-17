@@ -1,6 +1,10 @@
 module Concerns::Job::RailsAdmin
   extend ActiveSupport::Concern
 
+  def title
+    self.company_name
+  end
+
   included do
     rails_admin do
       visible false

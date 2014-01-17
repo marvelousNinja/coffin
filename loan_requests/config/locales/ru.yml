@@ -1,4 +1,4 @@
-ru:   
+ru:
   admin:
     home:
       name: "Главная"
@@ -53,8 +53,8 @@ ru:
         done: "проверен"
       dashboard:
         title: "Добро пожаловать"
-        menu: "Домашняя страница"
-        breadcrumb: "домашняя страница"
+        menu: "Основная панель"
+        breadcrumb: "Главная"
       index:
         title: "Список %{model_label_plural}"
         menu: "Список"
@@ -68,13 +68,13 @@ ru:
       new:
         title: "Новый %{model_label}"
         menu: "Создание"
-        breadcrumb: "новый"
+        breadcrumb: "Создание"
         link: "Добавить %{model_label}"
         done: "создание"
       edit:
         title: "Редактировение %{model_label} '%{object_label}'"
         menu: "Редактирование"
-        breadcrumb: "редактирование"
+        breadcrumb: "Редактирование"
         link: "Редактировать %{model_label}"
         done: "сохранено"
       delete:
@@ -426,8 +426,8 @@ ru:
   activerecord:
     models:
       loan_request:
-        one: "Заказ кредита"
-        other: "Заказы кредита"
+        one: "Кредитная заявка"
+        other: "Кредитные заявки"
       profile:
         one: "Профиль"
         other: "Профили"
@@ -441,24 +441,25 @@ ru:
         one: "Адрес проживания"
         other: "Адреса проживания"
       job:
-        one: "Работа"
+        one: "Работу"
         other: "Работы"
     attributes:
       loan_request:
-        sum: "Сумма" 
+        status: 'Статус'
+        sum: "Сумма"
         interval: "Интервал"
         profile: "Профиль"
         document: "Документ"
-        registration_address: "Адрес прописки"
-        lives_by_registration_address: "Проживаю по месту прописки"
+        registration_address: "Адрес регистрации"
+        lives_by_registration_address: "Проживаю по месту регистрации"
         current_location_type: "Текущие условия проживания"
         current_address: "Текущий адрес"
-        doesnt_have_a_job: "Не имею работы"
+        doesnt_have_a_job: "Не имеет работы"
         job: "Место работы"
         dependants_count: "Количество членов семьи"
-        average_income: "Средний доход"
-        has_a_real_estate: "Есть недвижимость"
-        has_a_car: "Есть машина"
+        average_income: "Чистый средний доход за последние три месяца"
+        has_a_real_estate: "Владеет недвижимостью"
+        has_a_car: "Владеет автомобилем"
       profile:
         name: "Имя"
         surname: "Фамилия"
@@ -558,7 +559,7 @@ ru:
             mobile_phone:
               invalid: "неверный"
               blank: "пустой"
-              wrong_length: "неверной длины" 
+              wrong_length: "неверной длины"
         document:
           attributes:
             series:
@@ -569,17 +570,17 @@ ru:
               invalid: "неверный"
               blank: "пустой"
               wrong_length: "неверной длины"
-            personal_number: 
+            personal_number:
               invalid: "неверный"
               blank: "пустой"
-              wrong_length: "неверной длины" 
+              wrong_length: "неверной длины"
             issued_by:
               invalid: "зполнено неверно"
               blank: "не заполнено"
               too_short: "недостаточно символов"
             issued_at:
               blank: "не заполнено"
-              not_a_date: "не является датой"   
+              not_a_date: "не является датой"
             expires_at:
               not_a_date: "не является датой"
               blank: "не заполнено"
@@ -588,7 +589,7 @@ ru:
               blank: "пустое"
             latin_surname:
               invalid: "неверная"
-              blank: "пустая" 
+              blank: "пустая"
         address:
           attributes:
             zip_code:
