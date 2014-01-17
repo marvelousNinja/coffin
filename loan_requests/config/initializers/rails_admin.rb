@@ -62,6 +62,10 @@ RailsAdmin.config do |config|
     committee_process
   end
 
+  # Locale
+  I18n.default_locale = :ru
+
+  # Locale links
   config.navigation_static_links = {
     'English' => '?locale=en',
     'Русский' => '?locale=ru'

@@ -1,23 +1,72 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      loan_request:
+        sum: "Sum" 
+        interval: "Interval"
+        profile: "Profile"
+        document: "Document"
+        registration_address: "Registration address"
+        lives_by_registration_address: "Lives by registration address"
+        current_location_type: "Current location type"
+        current_address: "Current address"
+        doesnt_have_a_job: "Doesn't have a job"
+        job: "Job"
+        dependants_count: "Dependants_count"
+        average_income: "Average income"
+        has_a_real_estate: "Has a real estate"
+        has_a_car: "Has a car"
+      profile:
+        name: "Name"
+        surname: "Surname"
+        middle_name: "Middle name"
+        previous_surname: "Previous surname"
+        birthdate: "Birthdate"
+        origin_country: "Origin country"
+        birthplace: "Birthplace"
+        gender: "Gender"
+        marital_status: "Marital status"
+        education: "Education"
+        email: "E-mail"
+        mobile_phone: "Mobile phone"
+      document:
+        document_type: "Document type"
+        series: "Series"
+        number: "Number"
+        personal_number: "Personal number"
+        issued_by: "Issued by"
+        issued_at: "Issued at"
+        expires_at: "Expires at"
+        latin_name: "Latin name"
+        latin_surname: "Latin surname"
+      registration_address:
+        country: "Country"
+        zip_code: "Zip code"
+        address_line: "Address line"
+        registered_at: "Registered at"
+        phone: "Phone"
+      current_address:
+        country: "Country"
+        zip_code: "Zip code"
+        address_line: "Address line"
+        phone: "Phone"
+      job:
+        company_name: "Company name"
+        upid: "Unique Payer Number"
+        working_phone: "Working phone"
+        personnel_department_phone: "Personnel department phone"
+        accounting_department_phone: "Accounting department phone"
+        position: "Position"
+        employed_at: "Employed at"
+  admin:
+    actions:
+      security_process:
+        menu: "Check order"
+        title: "Check order by security"
+        breadcrumb: "check order"
+        done: "checked"
+      committee_process:
+        menu: "Check order"
+        title: "Check order by member of committee"
+        breadcrumb: "check order"
+        done: "checked"

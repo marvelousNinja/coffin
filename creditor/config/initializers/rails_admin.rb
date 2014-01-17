@@ -47,6 +47,15 @@ RailsAdmin.config do |config|
     charts
   end
 
+  # Locale
+  I18n.default_locale = :ru
+
+  # Links for locale
+  config.navigation_static_links = {
+    'English' => '?locale=en',
+    'Русский' => '?locale=ru'
+  }
+
   ################  Model configuration  ################
 
   # Each model configuration can alternatively:
