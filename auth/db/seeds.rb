@@ -114,7 +114,14 @@ applications = [
     redirect_uri: 'http://localhost:3001/users/auth/centralized_auth/callback',
     uid: '6e8e203a411feefb4ea2124960659b0cb8eae706382b8530843f26af0662d768',
     secret: 'c4b545923ffc1526ece575cafd4d8bc801909e9ee3504c89ed0b92694ac50777'
+  },
+  {
+    name: 'Accounts',
+    redirect_uri: 'http://localhost:3004/users/auth/centralized_auth/callback',
+    uid: '055a274bb0f5f7e0950690f724f92f0ebaf715d09fb50acc6f30f59f156f3139',
+    secret: '3ea3aa965e206b99fc3673bc26b42972c66e8be714825db1fb61944dc66e8fd9'
   }
+
 ]
 
 applications.each do |params|
