@@ -27,8 +27,8 @@ ru:
         wait_for_committee_approval:	"Ожидать решения комитета"
     profile:
       gender:
-        male:		"Мужчина"
-        female:		"Женщина"
+        male:		"Мужской"
+        female:		"Женский"
       marital_status:
         single:		"Одинок(а)"
         widowed:	"Овдовел(а)"

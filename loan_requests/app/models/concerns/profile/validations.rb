@@ -7,11 +7,12 @@ module Concerns::Profile::Validations
     validates :education, presence: true, inclusion: { in: Concerns::Profile::Enumerations::EDUCATIONS }
     validates :origin_country, presence: true, inclusion: { in: Country.all.map(&:first) }
 
-    validates :name, :middle_name, :surname, :previous_surname,
+    validates :name, :middle_name, :surname,
       format: { with: /\A((([доДО]')?[А-Я])?[а-я]{1,}(-[А-Яа-я]{2,})?[ ]?)+\S\z/},
       length: { in: 1..50 }
     validates :name, :middle_name, :surname, presence: true
-    validates :previous_surname, presence: false, allow_blank: true
+    validates :previous_surname, format: { with: /\A((([доДО]')?[А-Я])?[а-я]{1,}(-[А-Яа-я]{2,})?[ ]?)+\S\z/ },
+      length: { in: 0..50 }, allow_blank: true
 
     validates :birthdate, presence: true, date: {
       after: Proc.new { Time.now - 90.years },

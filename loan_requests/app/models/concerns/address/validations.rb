@@ -2,6 +2,8 @@ module Concerns::Address::Validations
   extend ActiveSupport::Concern
 
   included do
+    validates :address_type, :country, :zip_code, :address_line, :phone, :presence => true
+
     validates :address_type, inclusion: { in: Concerns::Address::Enumerations::ADDRESS_TYPES }
     validates :country, inclusion: { in: Country.all.map(&:first) }
     validates :zip_code, format: { with: /[\d]{6}/ }, length: { is: 6 }
