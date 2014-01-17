@@ -5,7 +5,6 @@ class CreatePolicies < ActiveRecord::Migration
       t.decimal :max
 
       t.string :period
-      t.string :units
 
       t.boolean :fixed
 

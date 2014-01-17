@@ -1,5 +1,5 @@
 class PercentPolicy < Policy
-  include Concerns::PercentPolicy::Enumerations
   include Concerns::PercentPolicy::Validations
+  include Concerns::Policy::Period
   include Concerns::PercentPolicy::RailsAdmin
 end
