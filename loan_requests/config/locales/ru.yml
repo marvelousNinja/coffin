@@ -441,11 +441,11 @@ ru:
         one: "Адрес проживания"
         other: "Адреса проживания"
       job:
-        one: "Место работы"
-        other: "Места работы"
+        one: "Работа"
+        other: "Работы"
     attributes:
       loan_request:
-        sum: "Размер кредита" 
+        sum: "Сумма" 
         interval: "Интервал"
         profile: "Профиль"
         document: "Документ"
