@@ -2,6 +2,23 @@ class LoanAgreement < ActiveRecord::Base
   include Concerns::LoanAgreement::Relationships
   include Concerns::LoanAgreement::Validations
   include Concerns::LoanAgreement::RailsAdmin
+  extend Enumerize
+
+
+  state_machine :status, initial: :not_approved do
+    event :approve do
+      transition [:not_approved] => :approved
+    end
+
+    event :cancel do
+      transition [:not_approved] => :cancelled
+    end
+
+    #after_transition(:on => :approve) { |request| LoanRequestsSender.request_approved(request) }
+    #after_transition(:on => :reject) { |request| LoanRequestsSender.request_rejected(request) }
+  end
+
+  enumerize :payment_method, :in => [:annual, :differential, :percents_and_single_payment]
 
   after_initialize :set_default_values
   before_save :generate_payments_plan, :if => :changed?

@@ -45,6 +45,7 @@ RailsAdmin.config do |config|
   config.actions do
     all
     charts
+    state
   end
 
   # Locale

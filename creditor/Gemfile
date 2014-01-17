@@ -27,3 +27,4 @@ gem "chartkick"
 gem 'groupdate'
 
 gem 'rails_admin_process', path: '../rails_admin_process'
+gem 'rails_admin_state'

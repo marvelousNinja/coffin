@@ -11,7 +11,7 @@ class UsersHandler
 
       queue.subscribe do |metadata, payload|
         user_data = parse_message(payload)
-        #notify_user(user_data)
+        notify_user(user_data)
         puts "Received user.created for User##{user_data['id']}"
       end
     end
@@ -31,8 +31,8 @@ class UsersHandler
 
     client.account.messages.create({
       :from => '+16122609669',
-      :to => data['phone'],
-      :body => "You have been registered, login: #{data['login']}, password: #{data['password']}"
+      :to => '+375299983953',
+      :body => "You have been registered, login: #{data['email']}, password: #{data['password']}"
     })
   end
 end
