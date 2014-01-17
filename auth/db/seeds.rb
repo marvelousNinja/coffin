@@ -108,6 +108,12 @@ applications = [
     redirect_uri: 'http://localhost:3003/users/auth/centralized_auth/callback',
     uid: '5010e13ff2c42dce1cb1f76e406593bced8813799436e01ab23407317eec8747',
     secret: 'e2ceabd3d63f63af2b40248d2570e6efc5121be36456e6afc87c5c96d8235a7b'
+  },
+  {
+    name: 'Creditor',
+    redirect_uri: 'http://localhost:3001/users/auth/centralized_auth/callback',
+    uid: '6e8e203a411feefb4ea2124960659b0cb8eae706382b8530843f26af0662d768',
+    secret: 'c4b545923ffc1526ece575cafd4d8bc801909e9ee3504c89ed0b92694ac50777'
   }
 ]
 
