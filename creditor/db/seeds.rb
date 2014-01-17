@@ -26,7 +26,7 @@ duration_policies = DurationPolicy.create! [
   {
     min: 3,
     max: 12,
-    units: 'months'
+    period: 'month'
   }
 ]
 

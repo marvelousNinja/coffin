@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140116011109) do
+ActiveRecord::Schema.define(version: 20140116221426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,11 +40,20 @@ ActiveRecord::Schema.define(version: 20140116011109) do
     t.datetime "updated_at"
   end
 
+  create_table "payments", force: true do |t|
+    t.integer  "basic_part"
+    t.integer  "percent_part"
+    t.date     "scheduled_at"
+    t.boolean  "processed",         default: false
+    t.integer  "loan_agreement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "policies", force: true do |t|
     t.decimal  "min"
     t.decimal  "max"
     t.string   "period"
-    t.string   "units"
     t.boolean  "fixed"
     t.string   "type"
     t.text     "payment_methods",           array: true
