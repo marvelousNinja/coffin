@@ -7,6 +7,20 @@ require 'rails_admin/config/actions'
 
 module RailsAdmin
   module Config
+    module Fields
+      module Types
+        class Date
+          def parse_input(params)
+            params[name] = self.class.normalize(params[name], localized_date_format).try(:to_date) if params[name].present?
+          end
+        end
+      end
+    end
+  end
+end
+
+module RailsAdmin
+  module Config
     module Sections
       class SecurityProcess < Base
       end
@@ -145,3 +159,6 @@ module RailsAdmin
   end
 end
 
+
+#require 'rails_admin/config/fields/base'
+#require 'rails_admin/i18n_support'
