@@ -19,3 +19,5 @@ gem 'doorkeeper'
 gem 'mq_connector', path: '../mq_connector'
 
 gem 'pry-nav'
+
+gem 'thin'

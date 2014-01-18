@@ -17,3 +17,5 @@ gem 'mq_connector', path: '../mq_connector'
 gem 'twilio-ruby'
 gem 'rails_admin'
 gem 'paper_trail'
+
+gem 'thin'

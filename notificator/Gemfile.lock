@@ -13,9 +13,8 @@ PATH
   remote: ../mq_connector
   specs:
     mq_connector (0.0.1)
-      amqp
-      rails (~> 4.0.2)
-      thin
+      amqp (~> 1.2.0)
+      rails (~> 4.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -223,6 +222,7 @@ DEPENDENCIES
   rails (= 4.0.2)
   rails_admin
   sass-rails (~> 4.0.0)
+  thin
   turbolinks
   twilio-ruby
   uglifier (>= 1.3.0)
