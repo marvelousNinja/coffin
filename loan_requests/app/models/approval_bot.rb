@@ -1,11 +1,11 @@
 class ApprovalBot
-  def process(id)
+  def self.process(id)
     tries = 3
     begin
       PaperTrail.whodunnit = User.find_by email: 'approval@bot.com'
       loan_request = LoanRequest.find id
-      if loan_request.sum < 1500
-        loan_request.approve
+      if loan_request.sum < 750_000
+        loan_request.approve!
       else
         loan_request.wait_for_security_check!
       end
@@ -14,7 +14,7 @@ class ApprovalBot
         sleep 2
         retry
       else
-        puts "[ApprovalBot] Can't find loan requests with specified ID"
+        puts "[#{self}] Can't find loan requests with specified ID"
       end
     end
   end
