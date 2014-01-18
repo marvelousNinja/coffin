@@ -3,57 +3,14 @@ module MqConnector
     extend ActiveSupport::Concern
 
     module ClassMethods
-      def connect(&client_code)
-        AMQP.start(
-          client_code: client_code,
-          auto_recovery: true,
-          on_tcp_connection_failure: method(:handle_tcp_failure),
-          on_tcp_connection_loss: method(:handle_tcp_connection_loss)) do |connection|
-          connection.on_tcp_connection_loss &method(:handle_tcp_connection_loss)
-          process(connection)
+      def connect(&block)
+        AMQP.start do |connection|
+          AMQP::Channel.new(connection) do |channel|
+            channel.topic('messages') do |exchange, declare_ok|
+              yield connection, channel, exchange
+            end
+          end
         end
-      end
-
-      def process(connection)
-        AMQP::Channel.new(connection, auto_recovery: true) do |channel|
-          connection.settings[:client_code].call(connection, channel)
-        end
-      end
-
-      def disconnect
-        AMQP.stop { EM.stop }
-      end
-
-      def handle_tcp_connection_loss(connection, settings)
-        puts "[MqConnector] Lost connection. Retrying in 3 seconds..."
-        sleep 3
-        connection.reconnect(true, 1)
-      end
-
-      def handle_tcp_failure(settings)
-        puts "[MqConnector] Can't connect to broker. Retrying in 3 seconds..."
-        sleep 3
-        process(AMQP.connect(settings))
-      end
-    end
-  end
-
-  module Handler
-    extend ActiveSupport::Concern
-    include Basic
-
-    def self.included(base)
-      @included_into ||= []
-      @included_into << base
-    end
-
-    def self.included_into
-      @included_into ||= []
-    end
-
-    module ClassMethods
-      def handle(*)
-        raise NotImplementedError
       end
     end
   end
@@ -63,8 +20,49 @@ module MqConnector
     include Basic
 
     module ClassMethods
-      def send_message(*)
-        raise NotImplementedError
+      def transmit(message_key, opts)
+        root_key = opts.fetch(:to)
+        key = "#{root_key}.#{message_key}"
+        contents = opts.fetch(:with).to_json
+
+        connect do |connection, channel, exchange|
+          exchange.publish contents, routing_key: key, persistent: true do
+            log(key, contents)
+            AMQP.stop { EM.stop }
+          end
+        end
+      end
+
+      def log(key, contents)
+        puts "[#{self}]: Sent #{key} with contents: #{contents}"
+      end
+    end
+  end
+
+  module Handler
+    extend ActiveSupport::Concern
+    include Basic
+
+    module ClassMethods
+      def listen_to(root_key, opts = {})
+        @queue_name = opts.fetch(:as, root_key)
+        @root_key = root_key
+      end
+
+      def on(message_key, &block)
+        connect do |connection, channel, exchange|
+          key = "#{@root_key}.#{message_key}"
+          queue = channel.queue(@queue_name, durable: true).bind(exchange, routing_key: key)
+          queue.subscribe do |metadata, payload|
+            contents = JSON.load(payload)
+            yield contents
+            log(key, contents)
+          end
+        end
+      end
+
+      def log(key, contents)
+        puts "[#{self}]: Received #{key} with contents: #{contents}"
       end
     end
   end
