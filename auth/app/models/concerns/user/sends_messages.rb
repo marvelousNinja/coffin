@@ -5,7 +5,7 @@ module Concerns::User::SendsMessages
     after_create :send_message
 
     def send_message
-      UsersSender.user_created(self)
+      UsersSender.created(self)
     end
   end
 end

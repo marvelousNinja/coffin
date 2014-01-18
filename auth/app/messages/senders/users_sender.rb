@@ -1,21 +1,17 @@
 class UsersSender
   include MqConnector::Sender
 
-  def self.user_created(user)
-    self.connect do |connection, channel|
-      exchange = channel.topic('events', durable: true)
+  def self.created(user)
+    message = user.attributes
+    message['password'] = user.password
 
-      password = user.generate_password(true)
-      user.save
+    transmit :created, :to => :users, :with => message
+  end
 
-      message = user.attributes
-      message['password'] = password
+  def self.created_for_agreement(user, id)
+    message = user.attributes
+    message['agreement_id'] = id
 
-      exchange.publish message.to_json, routing_key: 'user.created', persistent: true
-
-      puts "Sent user.created for User##{user.id}"
-
-      self.disconnect
-    end
+    transmit :created_for_agreement, :to => :users, :with => message
   end
 end
