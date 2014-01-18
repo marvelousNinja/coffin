@@ -6,6 +6,7 @@ module MqConnector
       def connect(&block)
         AMQP.start do |connection|
           AMQP::Channel.new(connection) do |channel|
+            channel.auto_recovery = true
             channel.topic('messages') do |exchange, declare_ok|
               yield connection, channel, exchange
             end

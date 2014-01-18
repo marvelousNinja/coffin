@@ -11,7 +11,7 @@ module MqConnector
     end
 
     initializer 'mq_connector.handle_cycle', :after => :load_config_initializers do |app|
-      app.eager_load! unless $0.end_with?('rake') || defined?(Rails::Console)
+      app.eager_load! if defined?(::Thin) || EM.reactor_running?
     end
   end
 end
