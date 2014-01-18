@@ -25,3 +25,5 @@ gem 'pry-nav'
 gem 'rails_admin_state'
 
 gem 'rails_admin_process', path: '../rails_admin_process'
+
+gem 'thin'
