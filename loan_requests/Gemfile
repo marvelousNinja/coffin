@@ -12,18 +12,18 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'auth_lib', path: '../auth_lib'
-gem 'mq_connector', path: '../mq_connector'
 gem 'rails_admin'
+gem 'rails_admin_state'
+gem 'rails_admin_process', path: '../rails_admin_process'
 gem 'paper_trail'
 
 gem 'state_machine'
-
 gem 'enumerize'
 gem 'date_validator'
 gem 'countries'
-gem 'pry-nav'
-gem 'rails_admin_state'
-
-gem 'rails_admin_process', path: '../rails_admin_process'
 
 gem 'thin'
+
+gem 'mq_connector', path: '../mq_connector'
+
+gem 'pry-nav'
