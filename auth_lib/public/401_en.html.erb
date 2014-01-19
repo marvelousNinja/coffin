@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>У вас нет прав для просмотра данной страницы (401)</title>
+  <title>You're not authorized to see this page (401)</title>
   <style>
   body {
     background-color: #EFEFEF;
@@ -49,9 +49,12 @@
 
 <body>
   <div class="dialog">
-    <h1> Вам не разрешено открывать эту страницу.</h1>
-    <p> Если вы считаете, что это произошло по ошибке, свяжитесь с ближайшим администратором Centralized Auth.</p>
+    <h1> You don't have permissions required to open this page.</h1>
+    <p> If you think that it's a mistake, contact Centralized Auth administrator.</p>
   </div>
-  <p>В случае серьезных обстоятельств (возможный взлом) немедленно свяжитесь со своим непосредственным начальником</p>
+  <p>In case of severe circumstances, contact your superiors immediately .</p>
+  <p><a href='/'>Go to the Home page</a></p>
+  <p><a href='/sign_out'>Sign out from this account</a></p>
+  <p><a href='http://localhost:3000/sign_out'>Sign out from Centralized Auth</a></p>
 </body>
 </html>
