@@ -10,8 +10,8 @@ module Concerns::DurationPolicy::RailsAdmin
       visible false
 
       edit do
-        field :min
-        field :max
+        field :min, :integer
+        field :max, :integer
         field :period
       end
     end
