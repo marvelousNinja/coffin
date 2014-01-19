@@ -1,63 +1,68 @@
 en:
   activerecord:
+    models:
+      credit_product:
+        one: "Credit product"
+        other: "Credit products"
+      loan_agreement:
+        one: "Loan agreement"
+        other: "Loan agreements"
+      payment:
+        one: "Payment"
+        other: "Payments"
+      policy:
+        one: "Policy"
+        other: "Policies"
+      user:
+        one: "User"
+        other: "Users"
+      version:
+        one: "Version"
+        other: "Versions"
     attributes:
-      loan_request:
-        sum: "Sum" 
-        interval: "Interval"
-        profile: "Profile"
-        document: "Document"
-        registration_address: "Registration address"
-        lives_by_registration_address: "Lives by registration address"
-        current_location_type: "Current location type"
-        current_address: "Current address"
-        doesnt_have_a_job: "Doesn't have a job"
-        job: "Job"
-        dependants_count: "Dependants_count"
-        average_income: "Average income"
-        has_a_real_estate: "Has a real estate"
-        has_a_car: "Has a car"
-      profile:
-        name: "Name"
-        surname: "Surname"
-        middle_name: "Middle name"
-        previous_surname: "Previous surname"
-        birthdate: "Birthdate"
-        origin_country: "Origin country"
-        birthplace: "Birthplace"
-        gender: "Gender"
-        marital_status: "Marital status"
-        education: "Education"
+      credit_product:
+        name: "Name" 
+        sum_policy: "Sum policy"
+        duration_policy: "Duration policy"
+        fine_policy: "Fine policy"
+        payment_policy: "Payment policy"
+        percent_policy: "Percent policy"
+        status: "Status"
+      loan_agreement:
+        initial_loan_sum: "Initial loan sum"
+        loan_percent: "Loan percent"
+        duration: "Duration"
+        fine_percent: "Fine percent"
+        payment_method: "Payment method"
+        advanced_repayment_percent: "Advanced repayment percent"
+        credit_product: "Credit product"
+        user: "User"
+      payment:
+        basic_part: "Basic part"
+        percent_part: "Percent part"
+        scheduled_at: "Scheduled at"
+        processed: "Processed"
+        loan_agreement: "Loan agreement"
+      policy:
+        min: "Minimum"
+        max: "Maximum"
+        period: "Period"
+        fixed: "Fixed"
+        type: "Type"
+        payment_methods: "Payment methods"
+        allows_advanced_repayment: "Allows advanced repayment"
+      user:
+        provider: "Provider"
+        uid: "Unique Payer Number"
         email: "E-mail"
-        mobile_phone: "Mobile phone"
-      document:
-        document_type: "Document type"
-        series: "Series"
-        number: "Number"
-        personal_number: "Personal number"
-        issued_by: "Issued by"
-        issued_at: "Issued at"
-        expires_at: "Expires at"
-        latin_name: "Latin name"
-        latin_surname: "Latin surname"
-      registration_address:
-        country: "Country"
-        zip_code: "Zip code"
-        address_line: "Address line"
-        registered_at: "Registered at"
-        phone: "Phone"
-      current_address:
-        country: "Country"
-        zip_code: "Zip code"
-        address_line: "Address line"
-        phone: "Phone"
-      job:
-        company_name: "Company name"
-        upid: "Unique Payer Number"
-        working_phone: "Working phone"
-        personnel_department_phone: "Personnel department phone"
-        accounting_department_phone: "Accounting department phone"
-        position: "Position"
-        employed_at: "Employed at"
+        access_token: "Acess token"
+      version:
+        item_type: "Item type"
+        item: "Item"
+        event: "Event"
+        whodunnit: "Perfomer"
+        object: "Object"
+        object_changes: "Object changes"
   admin:
     actions:
       security_process:

@@ -41,10 +41,10 @@ ru:
       items: "Элементы"
       message: "Сообщение"
     actions:
-      security_process:
-        menu: "Обработать заявку"
-        title: "Обработка заявки сотрудником службы безопасности"
-        breadcrumb: "обработка заявки"
+      charts:
+        menu: "Графики"
+        title: "Графики для анализа"
+        breadcrumb: "Графики"
         done: "проверен"
       committee_process:
         menu: "Обработать заявку"
@@ -425,82 +425,68 @@ ru:
 
   activerecord:
     models:
-      loan_request:
-        one: "Заказ кредита"
-        other: "Заказы кредита"
-      profile:
-        one: "Профиль"
-        other: "Профили"
-      document:
-        one: "Документ"
-        other: "Документы"
-      registration_address:
-        one: "Адрес регистрации"
-        other: "Адреса регистрации"
-      current_address:
-        one: "Адрес проживания"
-        other: "Адреса проживания"
-      job:
-        one: "Работа"
-        other: "Работы"
+      credit_product:
+        one: "Кредитный продукт"
+        other: "Кредитные продукты"
+      loan_agreement:
+        one: "Кредитный договор"
+        other: "Кредитные договоры"
+      payment:
+        one: "Платёж"
+        other: "Платежи"
+      policy:
+        one: "Курс"
+        other: "Курсы"
+      user:
+        one: "Пользователь"
+        other: "Пользователи"
+      version:
+        one: "Версия"
+        other: "Версии"
     attributes:
-      loan_request:
-        sum: "Сумма"
-        interval: "Интервал"
-        profile: "Профиль"
-        document: "Документ"
-        registration_address: "Адрес прописки"
-        lives_by_registration_address: "Проживаю по месту прописки"
-        current_location_type: "Текущие условия проживания"
-        current_address: "Текущий адрес"
-        doesnt_have_a_job: "Не имею работы"
-        job: "Место работы"
-        dependants_count: "Количество членов семьи"
-        average_income: "Средний доход"
-        has_a_real_estate: "Есть недвижимость"
-        has_a_car: "Есть машина"
-      profile:
-        name: "Имя"
-        surname: "Фамилия"
-        middle_name: "Отчество"
-        previous_surname: "Прежняя фамилия"
-        birthdate: "День рождения"
-        origin_country: "Страна рождения"
-        birthplace: "Место рождения"
-        gender: "Пол"
-        marital_status: "Семейный статус"
-        education: "Образование"
-        email: "Электронная почта"
-        mobile_phone: "Мобильный телефон"
-      document:
-        document_type: "Тип документа"
-        series: "Серия"
-        number: "Номер"
-        personal_number: "Личный номер"
-        issued_by: "Кем выдан"
-        issued_at: "Когда выдан"
-        expires_at: "Когда истекает"
-        latin_name: "Имя на латинице"
-        latin_surname: "Фамилия на латинице"
-      registration_address:
-        country: "Страна"
-        zip_code: "Почтовый код"
-        address_line: "Адресная строка"
-        registered_at: "Дата регистрации"
-        phone: "Телефон"
-      current_address:
-        country: "Страна"
-        zip_code: "Почтовый код"
-        address_line: "Адресная строка"
-        phone: "Телефон"
-      job:
-        company_name: "Название компании"
-        upid: "Учетный Номер Плательщика"
-        working_phone: "Рабочий телефон"
-        personnel_department_phone: "Телефон отдела кадров"
-        accounting_department_phone: "Телефон бухгалтерии"
-        position: "Занимаемая должность"
-        employed_at: "Дата приёма на работу"
+      credit_product:
+        name: "Наименование" 
+        sum_policy: "Курс суммы"
+        duration_policy: "Курс продолжительности"
+        fine_policy: "Курс штрафования"
+        payment_policy: "Курс платежей"
+        percent_policy: "Курс процентов"
+        status: "Статус"
+      loan_agreement:
+        initial_loan_sum: "Начальная сумма кредита"
+        loan_percent: "Процент по кредиту"
+        duration: "Продолжительность"
+        fine_percent: "Штрафной процент"
+        payment_method: "Способ оплаты"
+        advanced_repayment_percent: "Процент при досрочном погашении"
+        credit_product: "Кредитный продукт"
+        user: "Пользователь"
+      payment:
+        basic_part: "Основная часть"
+        percent_part: "Процентная часть"
+        scheduled_at: "Запланирован на"
+        processed: "Статус обработки"
+        loan_agreement: "Кредитный договор"
+      policy:
+        min: "Минимум"
+        max: "Максимум"
+        period: "Период"
+        fixed: "Фиксированность"
+        type: "Тип"
+        payment_methods: "Способ оплаты"
+        allows_advanced_repayment: "Возможность досрочного погашения"
+      user:
+        provider: "Поставщик"
+        uid: "Учётный номер плательщика"
+        email: "Адрес электронной почты"
+        access_token: "Токен доступа"
+      version:
+        item_type: "Item type"
+        item: "Item"
+        event: "Event"
+        whodunnit: "Perfomer"
+        object: "Object"
+        object_changes: "Object changes"
     errors:
       models:
         loan_request:
