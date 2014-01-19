@@ -7,7 +7,11 @@ module Concerns::DurationPolicy::RailsAdmin
     end
 
     rails_admin do
-      visible false
+      list do
+        field :min, :integer
+        field :max, :integer
+        field :period
+      end
 
       edit do
         field :min, :integer

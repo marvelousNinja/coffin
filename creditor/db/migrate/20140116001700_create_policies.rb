@@ -1,16 +1,16 @@
 class CreatePolicies < ActiveRecord::Migration
   def change
     create_table :policies do |t|
-      t.decimal :min
-      t.decimal :max
+      t.decimal :min, default: 0
+      t.decimal :max, default: 0
 
       t.string :period
 
-      t.boolean :fixed
+      t.boolean :fixed, default: false
 
       t.string :type
 
-      t.text :payment_methods, array: true
+      t.text :payment_methods, array: true, default: []
       t.boolean :allows_advanced_repayment
 
       t.timestamps

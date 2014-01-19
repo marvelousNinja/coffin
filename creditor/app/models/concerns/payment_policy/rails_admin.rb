@@ -7,11 +7,18 @@ module Concerns::PaymentPolicy::RailsAdmin
     end
 
     rails_admin do
-      edit do
-        field :payment_methods
-        field :allows_advanced_repayment
+      list do
         field :min
         field :max
+        field :fixed
+        field :allows_advanced_repayment
+      end
+
+      edit do
+        field :min
+        field :max
+        field :payment_methods
+        field :allows_advanced_repayment
       end
     end
   end
