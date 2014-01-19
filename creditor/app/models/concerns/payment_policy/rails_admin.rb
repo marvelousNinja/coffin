@@ -7,11 +7,27 @@ module Concerns::PaymentPolicy::RailsAdmin
     end
 
     rails_admin do
-      edit do
-        field :payment_methods
+      navigation_label Policy.model_name.human :count => 2
+
+      list do
+        field :min do
+          pretty_value do
+            value.to_s + ' %'
+          end
+        end
+        field :max do
+          pretty_value do
+            value.to_s + ' %'
+          end
+        end
         field :allows_advanced_repayment
+      end
+
+      edit do
         field :min
         field :max
+        field :payment_methods
+        field :allows_advanced_repayment
       end
     end
   end

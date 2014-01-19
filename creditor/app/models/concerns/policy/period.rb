@@ -13,7 +13,7 @@ module Concerns::Policy::Period
   included do
     extend Enumerize
 
-    enumerize :period, in: PERIODS
+    enumerize :period, in: PERIODS, default: PERIODS.first
     validates :period, presence: true, inclusion: { in: PERIODS }
 
     def period_in_days

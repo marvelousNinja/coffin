@@ -7,7 +7,22 @@ module Concerns::PercentPolicy::RailsAdmin
     end
 
     rails_admin do
-      visible false
+      navigation_label Policy.model_name.human :count => 2
+
+      list do
+        field :min do
+          pretty_value do
+            value.to_s + ' %'
+          end
+        end
+        field :max do
+          pretty_value do
+            value.to_s + ' %'
+          end
+        end
+        field :period
+        field :fixed
+      end
 
       edit do
         field :min

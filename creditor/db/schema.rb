@@ -55,12 +55,12 @@ ActiveRecord::Schema.define(version: 20140119051020) do
   end
 
   create_table "policies", force: true do |t|
-    t.decimal  "min"
-    t.decimal  "max"
+    t.decimal  "min",                       default: 0.0
+    t.decimal  "max",                       default: 0.0
     t.string   "period"
-    t.boolean  "fixed"
+    t.boolean  "fixed",                     default: false
     t.string   "type"
-    t.text     "payment_methods",           array: true
+    t.text     "payment_methods",           default: [],    array: true
     t.boolean  "allows_advanced_repayment"
     t.datetime "created_at"
     t.datetime "updated_at"
