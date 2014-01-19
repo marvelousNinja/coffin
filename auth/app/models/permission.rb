@@ -1,4 +1,6 @@
 class Permission < ActiveRecord::Base
-	belongs_to :role
-  has_many :conditions
+	include Concerns::Permission::Relationships
+  include Concerns::Permission::Validations
+  include Concerns::Permission::RailsAdmin
+  has_paper_trail
 end

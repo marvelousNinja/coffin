@@ -8,10 +8,10 @@ class UsersSender
     transmit :created, :to => :users, :with => message
   end
 
-  def self.created_for_agreement(user, id)
+  def self.created_for(user, receiver)
     message = user.attributes
-    message['agreement_id'] = id
+    message['for'] = receiver
 
-    transmit :created_for_agreement, :to => :users, :with => message
+    transmit :created_for, :to => :users, :with => message
   end
 end

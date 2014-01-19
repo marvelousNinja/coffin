@@ -1,4 +1,6 @@
 class Role < ActiveRecord::Base
-  has_many :permissions
-  has_and_belongs_to_many :users
+  include Concerns::Role::Relationships
+  include Concerns::Role::Validations
+  include Concerns::Role::RailsAdmin
+  has_paper_trail
 end
