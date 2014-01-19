@@ -7,9 +7,19 @@ module Concerns::DurationPolicy::RailsAdmin
     end
 
     rails_admin do
+      navigation_label Policy.model_name.human :count => 2
+
       list do
-        field :min, :integer
-        field :max, :integer
+        field :min do
+          pretty_value do
+            value.to_i
+          end
+        end
+        field :max do
+          pretty_value do
+            value.to_i
+          end
+        end
         field :period
       end
 
