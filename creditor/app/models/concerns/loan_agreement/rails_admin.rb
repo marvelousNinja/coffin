@@ -17,6 +17,24 @@ module Concerns::LoanAgreement::RailsAdmin
     end
 
     rails_admin do
+      list do
+        field :initial_loan_sum do
+          pretty_value do
+            bindings[:view].try(:number_with_delimiter, value.to_i)
+          end
+        end
+        field :loan_percent do
+          pretty_value do
+            value.to_s + ' %'
+          end
+        end
+        field :duration do
+          pretty_value do
+            value.to_i
+          end
+        end
+      end
+
       edit do
         field :status, :state
         field :initial_loan_sum
