@@ -1,4 +1,4 @@
-ru:   
+ru:
   admin:
     home:
       name: "Главная"
@@ -445,7 +445,7 @@ ru:
         other: "Работы"
     attributes:
       loan_request:
-        sum: "Сумма" 
+        sum: "Сумма"
         interval: "Интервал"
         profile: "Профиль"
         document: "Документ"
@@ -558,7 +558,7 @@ ru:
             mobile_phone:
               invalid: "неверный"
               blank: "пустой"
-              wrong_length: "неверной длины" 
+              wrong_length: "неверной длины"
         document:
           attributes:
             series:
@@ -569,17 +569,17 @@ ru:
               invalid: "неверный"
               blank: "пустой"
               wrong_length: "неверной длины"
-            personal_number: 
+            personal_number:
               invalid: "неверный"
               blank: "пустой"
-              wrong_length: "неверной длины" 
+              wrong_length: "неверной длины"
             issued_by:
               invalid: "зполнено неверно"
               blank: "не заполнено"
               too_short: "недостаточно символов"
             issued_at:
               blank: "не заполнено"
-              not_a_date: "не является датой"   
+              not_a_date: "не является датой"
             expires_at:
               not_a_date: "не является датой"
               blank: "не заполнено"
@@ -588,7 +588,7 @@ ru:
               blank: "пустое"
             latin_surname:
               invalid: "неверная"
-              blank: "пустая" 
+              blank: "пустая"
         address:
           attributes:
             zip_code:

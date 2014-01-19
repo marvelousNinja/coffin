@@ -1,18 +1,17 @@
-module Concerns::DurationPolicy::RailsAdmin
+module Concerns::PaymentPolicy::RailsAdmin
   extend ActiveSupport::Concern
 
   included do
     def title
-      "#{min.to_i} - #{max.to_i} #{period.pluralize}"
+      "Once per #{period}, all methods"
     end
 
     rails_admin do
-      visible false
-
       edit do
+        field :payment_methods
+        field :allows_advanced_repayment
         field :min
         field :max
-        field :period
       end
     end
   end

@@ -13,9 +13,8 @@ PATH
   remote: ../mq_connector
   specs:
     mq_connector (0.0.1)
-      amqp
-      rails (~> 4.0.2)
-      thin
+      amqp (~> 1.2.0)
+      rails (~> 4.0.0)
 
 PATH
   remote: ../rails_admin_process
@@ -255,5 +254,6 @@ DEPENDENCIES
   rails_admin_state
   sass-rails (~> 4.0.0)
   state_machine
+  thin
   turbolinks
   uglifier (>= 1.3.0)
