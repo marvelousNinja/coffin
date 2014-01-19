@@ -26,6 +26,15 @@ RailsAdmin.config do |config|
   # Or with a PaperTrail: (you need to install it first)
   config.audit_with :paper_trail, 'User'
 
+  # Locale
+  I18n.default_locale = :ru
+
+  # Locale links
+  config.navigation_static_links = {
+    'English' => '?locale=en',
+    'Русский' => '?locale=ru'
+  }
+
   # Display empty fields in show views:
   # config.compact_show_view = false
 

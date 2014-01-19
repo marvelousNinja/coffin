@@ -1,0 +1,62 @@
+ru:
+  enumerize:
+    address:
+      address_type:
+        registration: 	"Регистрации"
+        current:	"Проживания"
+    document:
+      document_type:
+        passport:		"Паспорт"
+        residence_permit:	"Вид на жительство"
+    loan_request:
+      current_location_type:
+        owning_a_flat:		"Собственная квартира"
+        owning_a_house:		"Собственный дом"
+        with_relatives:		"Проживаю с родственниками"
+        renting:		"Арендую жильё"
+        other:			"Другое"
+      interval:
+        several_months:		"Несколько месяцев"
+        half_year:		"Полгода"
+        one_year:		"Один год"
+        several_years:		"Несколько лет"
+      status:
+        approve:	"Принять"
+        reject:		"Отклонить"
+        wait_for_security_check:	"Ожидать проверку службой безопасности"
+        wait_for_committee_approval:	"Ожидать решения комитета"
+    profile:
+      gender:
+        male:		"Мужской"
+        female:		"Женский"
+      marital_status:
+        single:		"Одинок(а)"
+        widowed:	"Овдовел(а)"
+        divorced:	"В разводе"
+        married:	"В браке"
+        cohabiting:	"В сожительстве"
+      education:
+        preschool:		"Дошкольное"
+        general_basic:		"Общее базовое"
+        general_secondary:	"Общее среднее"
+        vocational:		"Профессионально-техническое"
+        secondary_special:	"Среднее специальное"
+        incomplete_higher:	"Незаконченное высшее"
+        higher:			"Высшее"
+        postgraduate:		"Последипломное"
+  activerecord:
+    state_machines:
+      states:
+        not_approved: 'Ожидает обработки'
+        approved: 'Одобрено'
+        rejected: 'Отклонено'
+        cancelled: 'Отменено'
+        awaiting_for_security_check: 'Ожидает проверки отделом безопасности'
+        awaiting_for_committee_approval: 'Ожидает проверки кредитным комитетом'
+      events:
+        approve: 'Одобрить'
+        reject: 'Отклонить'
+        wait_for_security_check: 'Ждать проверки отделом безопасности'
+        wait_for_committee_approval: 'Ждать проверки кредитным комитетом'
+
+
