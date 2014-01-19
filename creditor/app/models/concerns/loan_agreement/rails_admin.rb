@@ -18,6 +18,11 @@ module Concerns::LoanAgreement::RailsAdmin
 
     rails_admin do
       list do
+        field :user_id do
+          pretty_value do
+            bindings[:object].try(:user_id)
+          end
+        end
         field :initial_loan_sum do
           pretty_value do
             bindings[:view].try(:number_with_delimiter, value.to_i)
