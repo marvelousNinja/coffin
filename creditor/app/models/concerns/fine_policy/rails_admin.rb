@@ -7,7 +7,11 @@ module Concerns::FinePolicy::RailsAdmin
     end
 
     rails_admin do
-      visible false
+      list do
+        field :min
+        field :max
+        field :period
+      end
 
       edit do
         field :min
