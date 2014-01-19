@@ -7,7 +7,7 @@ class Users::OmniauthCallbacksController < ::Devise::OmniauthCallbacksController
 
 	def centralized_auth
 	  options = request.env['omniauth.auth']
-		user = User.find_or_initialize_by uid: options.uid, provider: options.provider, email: options.info.email
+		user = User.find_or_initialize_by id: options.uid, provider: options.provider, email: options.info.email
 		user.access_token = options.credentials.token
 		user.save
 

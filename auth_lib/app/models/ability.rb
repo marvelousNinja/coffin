@@ -32,7 +32,7 @@ class Ability
   def build_filters(options)
     filters = options['filters']
     filters.deep_symbolize_keys!
-    if filters[:user_id] && filters[:user_id].to_i == @user.uid.to_i
+    if filters[:user_id] && filters[:user_id].to_i == @user.id.to_i
       filters[:user_id] = @user.id
     end
     filters
