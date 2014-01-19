@@ -13,9 +13,6 @@ class LoanAgreement < ActiveRecord::Base
     event :cancel do
       transition [:not_approved] => :cancelled
     end
-
-    #after_transition(:on => :approve) { |request| LoanRequestsSender.request_approved(request) }
-    #after_transition(:on => :reject) { |request| LoanRequestsSender.request_rejected(request) }
   end
 
   enumerize :payment_method, :in => [:annual, :differential, :percents_and_single_payment]
