@@ -65,3 +65,13 @@ loan_agreements = LoanAgreement.create! [
     credit_product: CreditProduct.first
   }
 ]
+
+pdf_templates = PdfTemplate.create! [
+  {
+    :body => File.open("#{Rails.root}/app/views/loan_agreements/light.html.erb", 'rb').read,
+    :locale => 'ru',
+    :path => 'loan_agreements/light',
+    :format => 'pdf',
+    :handler => 'erb'
+  }
+]

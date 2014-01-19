@@ -28,6 +28,7 @@ gem 'groupdate'
 gem 'wkhtmltopdf-binary'
 gem 'wicked_pdf'
 gem 'carrierwave'
+gem 'ckeditor'
 
 gem 'mq_connector', path: '../mq_connector'
 

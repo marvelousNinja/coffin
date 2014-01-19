@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140119051020) do
+ActiveRecord::Schema.define(version: 20140119223424) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(version: 20140119051020) do
     t.boolean  "processed",         default: false
     t.integer  "sum"
     t.integer  "loan_agreement_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "pdf_templates", force: true do |t|
+    t.text     "body"
+    t.string   "path"
+    t.string   "format"
+    t.string   "locale"
+    t.string   "handler"
+    t.boolean  "partial",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
