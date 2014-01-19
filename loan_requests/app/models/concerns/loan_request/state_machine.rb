@@ -1,4 +1,4 @@
-module Concerns::LoanRequest::HasStateMachine
+module Concerns::LoanRequest::StateMachine
   extend ActiveSupport::Concern
 
   included do
