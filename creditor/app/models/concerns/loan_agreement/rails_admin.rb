@@ -16,6 +16,10 @@ module Concerns::LoanAgreement::RailsAdmin
       'Graph'
     end
 
+    def title
+      "№ #{id}"
+    end
+
     rails_admin do
       list do
         field :user_id do
