@@ -2,7 +2,7 @@ module Concerns::Condition::Validations
   extend ActiveSupport::Concern
 
   included do
-    validates :field, :value, :presence => true, :format => { :with => /[.]+/},
-      :length => { :in => 1..255 }, :uniqueness => true
+    validates :field, :value, :presence => true, :format => { :with => /[\S\s]+/},
+      :length => { :in => 1..255 }
   end
 end
