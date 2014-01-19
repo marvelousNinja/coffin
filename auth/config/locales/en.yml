@@ -1,4 +1,7 @@
 en:
+  #admin:
+    #misc:
+      #navigation_static_label: "Switch Language"
   activerecord:
     attributes:
       loan_request:
@@ -12,7 +15,7 @@ en:
         current_address: "Current address"
         doesnt_have_a_job: "Doesn't have a job"
         job: "Job"
-        dependants_count: "Dependants_count"
+        dependants_count: "Dependants count"
         average_income: "Average income"
         has_a_real_estate: "Has a real estate"
         has_a_car: "Has a car"

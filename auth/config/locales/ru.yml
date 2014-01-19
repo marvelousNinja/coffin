@@ -91,18 +91,18 @@ ru:
       export:
         title: "Экспорт %{model_label}"
         menu: "Экспорт"
-        breadcrumb: "экспорт"
+        breadcrumb: "Экспорт"
         link: "Экспорт найденных %{model_label_plural}"
         bulk_link: "Экспорт выбраных %{model_label_plural}"
         done: "экспортировано"
       history_index:
         title: "История: %{model_label_plural}"
         menu: "История"
-        breadcrumb: "история"
+        breadcrumb: "История"
       history_show:
         title: "История: %{model_label} '%{object_label}'"
         menu: "История"
-        breadcrumb: "история"
+        breadcrumb: "История"
     form:
       cancel: "Отмена"
       basic_info: "Основное"
@@ -133,12 +133,12 @@ ru:
         header_for_root_methods: "%{name}" # 'model' is available
         header_for_association_methods: "%{name} [%{association}]"
         encoding_to: "Декодировать как"
-        encoding_to_help: "Выберите результирующую кодировку. Оставьте пустой, чтобы оставить исходную кодировку нетронутой: (%{name})"
+        encoding_to_help: "Выберите результирующую кодировку. Оставьте пустым для кодировки по умолчанию (%{name})"
         skip_header: "Без заголовка"
         skip_header_help: "Не выводить заголовок (без описаний полей)"
         default_col_sep: ","
         col_sep: "Разделитель столбцов"
-        col_sep_help: "Оставьте пустым, чтобы было по умолчанию ('%{value}')" # value is default_col_sep
+        col_sep_help: "Оставьте пустым, чтобы использовать значение по умолчанию ('%{value}')" # value is default_col_sep
   date:
     abbr_day_names:
     - Вс
@@ -443,9 +443,21 @@ ru:
       job:
         one: "Работу"
         other: "Работы"
+      condition:
+        one: "Условия"
+        other: "Условия"
+      user:
+        one: "Пользователь"
+        other: "Пользователи"
+      role:
+        one: "Роль"
+        other: "Роли"
+      permission:
+        one: "Разрешение"
+        other: "Разрешения"
     attributes:
       loan_request:
-        status: 'Статус'
+        status: "Статус"
         sum: "Сумма"
         interval: "Интервал"
         profile: "Профиль"
@@ -478,9 +490,9 @@ ru:
         series: "Серия"
         number: "Номер"
         personal_number: "Личный номер"
-        issued_by: "Кем выдан"
-        issued_at: "Когда выдан"
-        expires_at: "Когда истекает"
+        issued_by: "Выдан"
+        issued_at: "Дата выдачи"
+        expires_at: "Действителен до"
         latin_name: "Имя на латинице"
         latin_surname: "Фамилия на латинице"
       registration_address:
@@ -502,6 +514,30 @@ ru:
         accounting_department_phone: "Телефон бухгалтерии"
         position: "Занимаемая должность"
         employed_at: "Дата приёма на работу"
+      condition:
+        field: "Поле"
+        value: "Значение"
+        user: "Пользователи"
+        permission: "Разрешения"
+      permission:
+        title: "Название"
+        action: "Действие"
+        subject: "Субъект"
+        owning_required: "Необходимо наличие"
+        conditions: "Условия"
+        role: "Роли"
+        subject_id: "ID субъекта"
+      role:
+        name: "Название"
+        permissions: "Разрешения"
+        users: "Пользователи"
+      user:
+        last_sign_in_at: "Последний вход в систему"
+        last_sign_in_ip: "IP-адрес последней сессии"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        roles: "Роли"
+        permissions: "Разрешения"
     errors:
       models:
         loan_request:
@@ -575,7 +611,7 @@ ru:
               blank: "пустой"
               wrong_length: "неверной длины"
             issued_by:
-              invalid: "зполнено неверно"
+              invalid: "заполнено неверно"
               blank: "не заполнено"
               too_short: "недостаточно символов"
             issued_at:
