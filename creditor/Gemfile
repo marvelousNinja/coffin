@@ -25,6 +25,10 @@ gem 'rails_admin_charts'
 gem 'chartkick'
 gem 'groupdate'
 
+gem 'wkhtmltopdf-binary'
+gem 'wicked_pdf'
+gem 'carrierwave'
+
 gem 'mq_connector', path: '../mq_connector'
 
 gem 'thin'
