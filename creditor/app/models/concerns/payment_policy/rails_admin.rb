@@ -10,7 +10,6 @@ module Concerns::PaymentPolicy::RailsAdmin
       list do
         field :min
         field :max
-        field :fixed
         field :allows_advanced_repayment
       end
 
