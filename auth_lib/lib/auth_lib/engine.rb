@@ -15,5 +15,10 @@ module AuthLib
         include OmniAuth::ErrorHandling
       end
     end
+
+    initializer 'auth_lib.load_static_assets' do |app|
+      #app.middleware.insert_after(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
+      #app.middleware.insert_before(::ActionDispatch::Static, ::ActionDispatch::Static, "#{root}/public")
+    end
   end
 end
