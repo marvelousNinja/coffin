@@ -4,14 +4,19 @@ module MqConnector
 
     module ClassMethods
       def connect(&block)
-        AMQP.start do |connection|
+        method = we_are_in_thin? ? 'connect' : 'start'
+
+        AMQP.public_send(method) do |connection|
           AMQP::Channel.new(connection) do |channel|
-            channel.auto_recovery = true
             channel.topic('messages') do |exchange, declare_ok|
               yield connection, channel, exchange
             end
           end
         end
+      end
+
+      def we_are_in_thin?
+        defined?(::Thin) && ObjectSpace.each_object(::Thin::Server).to_a.present?
       end
     end
   end

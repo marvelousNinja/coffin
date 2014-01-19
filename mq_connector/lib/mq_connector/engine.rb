@@ -10,8 +10,8 @@ module MqConnector
       app.config.eager_load_paths << "#{app.root}/app/messages/handlers"
     end
 
-    initializer 'mq_connector.handle_cycle', :after => :finish_hook do |app|
-      app.eager_load! if defined?(::Thin) && ObjectSpace.each_object(::Thin::Server).to_a.present?
+    initializer 'mq_connector.handle_cycle' do |app|
+      EM.next_tick { app.eager_load! }
     end
   end
 end
