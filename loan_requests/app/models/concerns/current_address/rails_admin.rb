@@ -1,11 +1,11 @@
 module Concerns::CurrentAddress::RailsAdmin
   extend ActiveSupport::Concern
 
-  def title
-    self.address_line
-  end
-
   included do
+    def title
+      address_line
+    end
+
     rails_admin do
       visible false
 

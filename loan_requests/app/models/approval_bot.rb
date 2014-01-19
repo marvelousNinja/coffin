@@ -1,14 +1,15 @@
 class ApprovalBot
   def self.process(id)
-    tries = 3
+    tries = 1
     begin
       PaperTrail.whodunnit = User.find_by email: 'approval@bot.com'
       loan_request = LoanRequest.find id
       if loan_request.sum < 750_000
-        loan_request.approve!
+        loan_request.approve
       else
-        loan_request.wait_for_security_check!
+        loan_request.wait_for_security_check
       end
+      loan_request.save
     rescue ActiveRecord::RecordNotFound
       if (tries -= 1) >= 0
         sleep 2

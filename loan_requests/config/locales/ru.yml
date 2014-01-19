@@ -39,7 +39,7 @@ ru:
       created_at: "Дата/Время"
       item: "Элемент"
       items: "Элементы"
-      message: "Сообщение"
+      message: "Список изменений"
     actions:
       security_process:
         menu: "Обработать заявку"
@@ -72,19 +72,19 @@ ru:
         link: "Добавить %{model_label}"
         done: "создание"
       edit:
-        title: "Редактировение %{model_label} '%{object_label}'"
+        title: "Редактирование: %{model_label} '%{object_label}'"
         menu: "Редактирование"
         breadcrumb: "Редактирование"
         link: "Редактировать %{model_label}"
-        done: "сохранено"
+        done: "сохранить"
       delete:
-        title: "Удаление %{model_label} '%{object_label}'"
+        title: "Удаление: %{model_label} '%{object_label}'"
         menu: "Удаление"
         breadcrumb: "удаление"
         link: "Удалить '%{object_label}'"
         done: "удалено"
       bulk_delete:
-        title: "Удалить много %{model_label_plural}"
+        title: "Удаление: %{model_label_plural}"
         menu: "Мульти-удаление"
         breadcrumb: "мульти-удаление"
         bulk_link: "Удалить выбранные %{model_label_plural}"
@@ -96,11 +96,11 @@ ru:
         bulk_link: "Экспорт выбраных %{model_label_plural}"
         done: "экспортировано"
       history_index:
-        title: "История для %{model_label_plural}"
+        title: "История: %{model_label_plural}"
         menu: "История"
         breadcrumb: "история"
       history_show:
-        title: "История для %{model_label} '%{object_label}'"
+        title: "История: %{model_label} '%{object_label}'"
         menu: "История"
         breadcrumb: "история"
     form:
@@ -456,7 +456,7 @@ ru:
         current_address: "Текущий адрес"
         doesnt_have_a_job: "Не имеет работы"
         job: "Место работы"
-        dependants_count: "Количество членов семьи"
+        dependants_count: "Количество иждивенцев"
         average_income: "Чистый средний доход за последние три месяца"
         has_a_real_estate: "Владеет недвижимостью"
         has_a_car: "Владеет автомобилем"
@@ -519,7 +519,7 @@ ru:
             current_address:
               blank: "пуст"
             job:
-              blank "пустое"
+              blank: "пустое"
             dependants_count:
               not_a_number: "не является числом"
             average_income:

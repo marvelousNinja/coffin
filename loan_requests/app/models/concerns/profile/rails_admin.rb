@@ -2,6 +2,9 @@ module Concerns::Profile::RailsAdmin
   extend ActiveSupport::Concern
 
   included do
+    def title
+      "#{name} #{surname}"
+    end
     rails_admin do
       visible false
 

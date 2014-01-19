@@ -7,18 +7,18 @@ module Concerns::LoanRequest::Validations
     validates :job, :presence => true, :unless => :doesnt_have_a_job?
 
     validates :sum, presence: true, numericality: { only_integer: true,
-      greater_than: 500_000,
-      less_than: 50_000_000
+      greater_than_or_equal_to: 500_000,
+      less_than_or_equal_to: 50_000_000
     }
 
     validates :dependants_count, numericality: { only_integer: true,
       greater_than_or_equal_to: 0,
-      less_than: 15
+      less_than_or_equal_to: 15
     }
 
     validates :average_income, numericality: { only_integer: true,
       greater_than_or_equal_to: 500_000,
-      less_than: 50_000_000
+      less_than_or_equal_to: 50_000_000
     }
 
     validates :interval, presence: true, inclusion: { in: Concerns::LoanRequest::Enumerations::INTERVALS }

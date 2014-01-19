@@ -1,11 +1,11 @@
 module Concerns::Job::RailsAdmin
   extend ActiveSupport::Concern
 
-  def title
-    self.company_name
-  end
-
   included do
+    def title
+      company_name
+    end
+
     rails_admin do
       visible false
 

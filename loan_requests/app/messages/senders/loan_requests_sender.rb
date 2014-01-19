@@ -7,7 +7,7 @@ class LoanRequestsSender
     end
 
     def approved(request)
-      transmit :approved, :to => :loan_requests, :with => request.attributes
+      transmit :approved, :to => :loan_requests, :with => request.attributes.merge(:email => request.profile.email)
     end
 
     def rejected(request)

@@ -1,11 +1,11 @@
 module Concerns::LoanRequest::RailsAdmin
   extend ActiveSupport::Concern
 
-  def title
-    "№ #{self.id}"
-  end
-
   included do
+    def title
+      "№ #{id}"
+    end
+
     rails_admin do
       edit do
         field :status, :state
