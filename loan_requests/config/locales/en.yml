@@ -1,8 +1,11 @@
 en:
+  welcome: |
+    In 1993, as the credit institution has been registered Closed Joint Stock Company "CoffinBank". The first license to operate in the securities market had received in 1994.
+    Since we are one of the recognized leaders in the field of investment and banking products in Russia. Using our unique global platform enabled us to become one of the leading organizers of equity and debt financing for Russian companies in international markets.
   activerecord:
     attributes:
       loan_request:
-        sum: "Sum" 
+        sum: "Sum"
         interval: "Interval"
         profile: "Profile"
         document: "Document"
