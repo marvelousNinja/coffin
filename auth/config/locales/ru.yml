@@ -56,7 +56,7 @@ ru:
         menu: "Основная панель"
         breadcrumb: "Главная"
       index:
-        title: "Список %{model_label_plural}"
+        title: "Список: %{model_label_plural}"
         menu: "Список"
         breadcrumb: "%{model_label_plural}"
       show:
@@ -69,7 +69,7 @@ ru:
         title: "Новый %{model_label}"
         menu: "Создание"
         breadcrumb: "Создание"
-        link: "Добавить %{model_label}"
+        link: "Добавить: %{model_label}"
         done: "создание"
       edit:
         title: "Редактирование: %{model_label} '%{object_label}'"
@@ -89,11 +89,11 @@ ru:
         breadcrumb: "мульти-удаление"
         bulk_link: "Удалить выбранные %{model_label_plural}"
       export:
-        title: "Экспорт %{model_label}"
+        title: "Экспорт: %{model_label}"
         menu: "Экспорт"
         breadcrumb: "Экспорт"
-        link: "Экспорт найденных %{model_label_plural}"
-        bulk_link: "Экспорт выбраных %{model_label_plural}"
+        link: "Экспорт: %{model_label_plural}"
+        bulk_link: "Экспорт: %{model_label_plural}"
         done: "экспортировано"
       history_index:
         title: "История: %{model_label_plural}"
@@ -123,10 +123,10 @@ ru:
     export:
       confirmation: "Экспортировать как %{name}"
       select: "Выберите поля для экспорта"
-      fields_from: "Поля из %{name}"
-      fields_from_associated: "Поля из ассоциированной %{name}"
+      fields_from: "Поля из: %{name}"
+      fields_from_associated: "Поля из ассоциации: %{name}"
       display: "Показать %{name}: %{type}"
-      options_for: "Настройки для %{name}"
+      options_for: "Настройки: %{name}"
       empty_value_for_associated_objects: "<пусто>"
       click_to_reverse_selection: 'Обратить выделение'
       csv:

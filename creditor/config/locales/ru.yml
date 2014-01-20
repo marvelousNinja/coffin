@@ -23,7 +23,7 @@ ru:
       navigation: "Навигация"
       navigation_static_label: "Смена языка"
       log_out: "Выйти"
-      ago: "назад"
+      ago: "Назад"
     flash:
       successful: "%{name}: успешно %{action}"
       error: "%{name}: не удалось %{action}"
@@ -32,7 +32,7 @@ ru:
       object_not_found: "Объект %{model} с id '%{id}' не найден"
     table_headers:
       model_name: "Название модели"
-      last_used: "Последней раз использовалось"
+      last_used: "Последний раз использовалось"
       records: "Записи"
       username: "Пользователь"
       changes: "Изменения"
@@ -45,22 +45,22 @@ ru:
         menu: "Графики"
         title: "Графики для анализа"
         breadcrumb: "Графики"
-        done: "проверен"
+        done: "Проверен"
       committee_process:
         menu: "Обработать заявку"
         title: "Обработка заявки членом кредитного коммитета"
-        breadcrumb: "обработка заявки"
-        done: "проверен"
+        breadcrumb: "Пбработка заявки"
+        done: "Проверен"
       dashboard:
         title: "Добро пожаловать"
         menu: "Домашняя страница"
-        breadcrumb: "домашняя страница"
+        breadcrumb: "Домашняя страница"
       index:
-        title: "Список %{model_label_plural}"
+        title: "Список: %{model_label_plural}"
         menu: "Список"
         breadcrumb: "%{model_label_plural}"
       show:
-        title: "Детали %{model_label} '%{object_label}'"
+        title: "Детали: %{model_label} '%{object_label}'"
         menu: "Просмотр"
         breadcrumb: "%{object_label}"
       show_in_app:
@@ -68,41 +68,41 @@ ru:
       new:
         title: "Новый %{model_label}"
         menu: "Создание"
-        breadcrumb: "новый"
+        breadcrumb: "Новый"
         link: "Добавить %{model_label}"
-        done: "создание"
+        done: "Создание"
       edit:
-        title: "Редактировение %{model_label} '%{object_label}'"
+        title: "Редактировение: %{model_label} '%{object_label}'"
         menu: "Редактирование"
-        breadcrumb: "редактирование"
+        breadcrumb: "Редактирование"
         link: "Редактировать %{model_label}"
-        done: "сохранено"
+        done: "Сохранено"
       delete:
-        title: "Удаление %{model_label} '%{object_label}'"
+        title: "Удаление: %{model_label} '%{object_label}'"
         menu: "Удаление"
-        breadcrumb: "удаление"
+        breadcrumb: "Удаление"
         link: "Удалить '%{object_label}'"
-        done: "удалено"
+        done: "Удалено"
       bulk_delete:
         title: "Удалить много %{model_label_plural}"
         menu: "Мульти-удаление"
-        breadcrumb: "мульти-удаление"
-        bulk_link: "Удалить выбранные %{model_label_plural}"
+        breadcrumb: "Мульти-удаление"
+        bulk_link: "Удалить %{model_label_plural}"
       export:
-        title: "Экспорт %{model_label}"
+        title: "Экспорт: %{model_label}"
         menu: "Экспорт"
         breadcrumb: "экспорт"
-        link: "Экспорт найденных %{model_label_plural}"
-        bulk_link: "Экспорт выбраных %{model_label_plural}"
-        done: "экспортировано"
+        link: "Экспорт: %{model_label_plural}"
+        bulk_link: "Экспорт: %{model_label_plural}"
+        done: "Экспортировано"
       history_index:
-        title: "История для %{model_label_plural}"
+        title: "История: %{model_label_plural}"
         menu: "История"
-        breadcrumb: "история"
+        breadcrumb: "История"
       history_show:
-        title: "История для %{model_label} '%{object_label}'"
+        title: "История: %{model_label} '%{object_label}'"
         menu: "История"
-        breadcrumb: "история"
+        breadcrumb: "История"
     form:
       cancel: "Отмена"
       basic_info: "Основное"
@@ -123,22 +123,22 @@ ru:
     export:
       confirmation: "Экспортировать как %{name}"
       select: "Выберите поля для экспорта"
-      fields_from: "Поля из %{name}"
-      fields_from_associated: "Поля из ассоциированной %{name}"
+      fields_from: "Поля из: %{name}"
+      fields_from_associated: "Поля из ассоциации: %{name}"
       display: "Показать %{name}: %{type}"
-      options_for: "Настройки для %{name}"
+      options_for: "Настройки: %{name}"
       empty_value_for_associated_objects: "<пусто>"
       click_to_reverse_selection: 'Обратить выделение'
       csv:
         header_for_root_methods: "%{name}" # 'model' is available
         header_for_association_methods: "%{name} [%{association}]"
         encoding_to: "Декодировать как"
-        encoding_to_help: "Выберите результирующую кодировку. Оставьте пустой, чтобы оставить исходную кодировку нетронутой: (%{name})"
+        encoding_to_help: "Выберите результирующую кодировку. Оставьте пустым для кодировки по умолчанию (%{name})"
         skip_header: "Без заголовка"
         skip_header_help: "Не выводить заголовок (без описаний полей)"
         default_col_sep: ","
         col_sep: "Разделитель столбцов"
-        col_sep_help: "Оставьте пустым, чтобы было по умолчанию ('%{value}')" # value is default_col_sep
+        col_sep_help: "Оставьте пустым, чтобы использовать значение по умолчанию ('%{value}')" # value is default_col_sep
   date:
     abbr_day_names:
     - Вс
@@ -190,7 +190,7 @@ ru:
     - ноября
     - декабря
 
-    month_names_initial: [Январь, Февраль, Март, Апрель, Маи, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
+    month_names_initial: [Январь, Февраль, Март, Апрель, Май, Июнь, Июль, Август, Сентябрь, Октябрь, Ноябрь, Декабрь]
     order:
     - :day
     - :month
@@ -371,10 +371,10 @@ ru:
             many: байт
             one: байт
             other: байта
-          gb: ГБ
-          kb: КБ
-          mb: МБ
-          tb: ТБ
+          gb: Гб
+          kb: Кб
+          mb: Мб
+          tb: Тб
     percentage:
       format:
         delimiter: ''
@@ -435,8 +435,23 @@ ru:
         one: "Платёж"
         other: "Платежи"
       policy:
-        one: "Курс"
-        other: "Курсы"
+        one: "Ограничение"
+        other: "Ограничения"
+      payment_policy:
+        one: "Политика платежей"
+        other: "Политики платежей"
+      sum_policy:
+        one: "Ограничение по сумме"
+        other: "Ограничения по сумме"
+      percent_policy:
+        one: "Ограничение по процентам"
+        other: "Ограничения по процентам"
+      fine_policy:
+        one: "Политика штрафования"
+        other: "Политики штрафования"
+      duration_policy:
+        one: "Ограничение по длительности"
+        other: "Ограничения по длительности"
       user:
         one: "Пользователь"
         other: "Пользователи"
@@ -446,12 +461,13 @@ ru:
     attributes:
       credit_product:
         name: "Наименование" 
-        sum_policy: "Курс суммы"
-        duration_policy: "Курс продолжительности"
-        fine_policy: "Курс штрафования"
-        payment_policy: "Курс платежей"
-        percent_policy: "Курс процентов"
+        sum_policy: "Ограничение суммы"
+        duration_policy: "Ограничение продолжительности"
+        fine_policy: "Политика штрафования"
+        payment_policy: "Политика платежей"
+        percent_policy: "Ограничение процентов"
         status: "Статус"
+        loan_agreements: "Кредитные договоры"
       loan_agreement:
         initial_loan_sum: "Начальная сумма кредита"
         loan_percent: "Процент по кредиту"
@@ -460,13 +476,16 @@ ru:
         payment_method: "Способ оплаты"
         advanced_repayment_percent: "Процент при досрочном погашении"
         credit_product: "Кредитный продукт"
+        user_id: "Пользователь"
         user: "Пользователь"
+        payments: "Платежи"
       payment:
         basic_part: "Основная часть"
         percent_part: "Процентная часть"
         scheduled_at: "Запланирован на"
         processed: "Статус обработки"
         loan_agreement: "Кредитный договор"
+        sum: "Сумма"
       policy:
         min: "Минимум"
         max: "Максимум"
@@ -475,6 +494,7 @@ ru:
         type: "Тип"
         payment_methods: "Способ оплаты"
         allows_advanced_repayment: "Возможность досрочного погашения"
+        credit_products: "Кредитные продукты"
       user:
         provider: "Поставщик"
         uid: "Учётный номер плательщика"
@@ -504,7 +524,7 @@ ru:
             current_address:
               blank: "пуст"
             job:
-              blank "пустое"
+              blank: "пустое"
             dependants_count:
               not_a_number: "не является числом"
             average_income:
