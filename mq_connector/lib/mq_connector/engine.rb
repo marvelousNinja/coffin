@@ -6,7 +6,7 @@ module MqConnector
     isolate_namespace MqConnector
 
     initializer 'mq_connector.autoload', :before => :set_autoload_paths do |app|
-      app.config.autoload_paths += %W(#{app.root}/app/messages/handlers #{app.root}/app/messages/senders)
+      app.config.autoload_once_paths += %W(#{app.root}/app/messages/handlers #{app.root}/app/messages/senders)
       app.config.eager_load_paths << "#{app.root}/app/messages/handlers"
     end
 

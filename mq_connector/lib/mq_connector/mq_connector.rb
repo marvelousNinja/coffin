@@ -8,7 +8,7 @@ module MqConnector
 
         AMQP.public_send(method) do |connection|
           AMQP::Channel.new(connection) do |channel|
-            channel.topic('messages') do |exchange, declare_ok|
+            channel.topic('messages', durable: true) do |exchange, declare_ok|
               yield connection, channel, exchange
             end
           end
