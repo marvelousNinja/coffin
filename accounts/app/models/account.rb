@@ -41,17 +41,19 @@ class Account < ActiveRecord::Base
   end
 
   def add_balance(amount)
-    if secondary_account.balance < 0
-      if secondary_account.balance * (-1) >= amount
-        secondary_account.balance += amount
+    if secondary_account
+      if secondary_account.balance < 0
+        if secondary_account.balance * (-1) >= amount
+          secondary_account.balance += amount
+        else
+          diff = secondary_account.balance + amount
+          secondary_account.balance = 0
+          self.balance += diff
+        end
       else
-        diff = secondary_account.balance + amount
-        secondary_account.balance = 0
-        self.balance += diff
+        self.balance += add.to_i
       end
-    else
-      self.balance += add.to_i
+      self.add = 0
     end
-    self.add = 0
   end
 end
