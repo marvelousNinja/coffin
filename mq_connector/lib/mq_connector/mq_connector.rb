@@ -58,7 +58,7 @@ module MqConnector
       def on(message_key, &block)
         connect do |connection, channel, exchange|
           key = "#{@root_key}.#{message_key}"
-          queue = channel.queue('', durable: true).bind(exchange, routing_key: key)
+          queue = channel.queue(@queue_name, durable: true).bind(exchange, routing_key: key)
           queue.subscribe do |metadata, payload|
             contents = JSON.load(payload)
             yield contents
