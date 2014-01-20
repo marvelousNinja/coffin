@@ -1,3 +1,5 @@
-auth:          sh -c 'cd auth && rails s -p3000'
-notificator:   sh -c 'cd notificator && rails s -p3002'
-loan_requests: sh -c 'cd notificator && rails s -p3003'
+auth:          sh -c 'cd auth && thin start -p3000'
+creditor:      sh -c 'cd creditor && thin start -p3001'
+notificator:   sh -c 'cd notificator && thin start -p3002'
+loan_requests: sh -c 'cd notificator && thin start -p3003'
+accounts:      sh -c 'cd accounts && thin start -p3004'
