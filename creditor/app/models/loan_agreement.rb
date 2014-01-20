@@ -4,6 +4,7 @@ class LoanAgreement < ActiveRecord::Base
   include Concerns::LoanAgreement::StateMachine
   include Concerns::LoanAgreement::PaymentPlan
   include Concerns::LoanAgreement::RailsAdmin
+  include Concerns::LoanAgreement::Pdf
 
   after_initialize :set_default_values
 

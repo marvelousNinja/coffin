@@ -49,23 +49,6 @@ payment_policies = PaymentPolicy.create! [
   }
 ]
 
-credit_products = CreditProduct.create! [
-  {
-    name: 'Легкий',
-    sum_policy: SumPolicy.first,
-    percent_policy: PercentPolicy.first,
-    duration_policy: DurationPolicy.first,
-    fine_policy: FinePolicy.first,
-    payment_policy: PaymentPolicy.first
-  }
-]
-
-loan_agreements = LoanAgreement.create! [
-  {
-    credit_product: CreditProduct.first
-  }
-]
-
 pdf_templates = PdfTemplate.create! [
   {
     :body => File.open("#{Rails.root}/app/views/loan_agreements/light.html.erb", 'rb').read,
@@ -73,5 +56,23 @@ pdf_templates = PdfTemplate.create! [
     :path => 'loan_agreements/light',
     :format => 'pdf',
     :handler => 'erb'
+  }
+]
+
+credit_products = CreditProduct.create! [
+  {
+    name: 'Легкий',
+    sum_policy: SumPolicy.first,
+    percent_policy: PercentPolicy.first,
+    duration_policy: DurationPolicy.first,
+    fine_policy: FinePolicy.first,
+    payment_policy: PaymentPolicy.first,
+    template_path: 'loan_agreements/light'
+  }
+]
+
+loan_agreements = LoanAgreement.create! [
+  {
+    credit_product: CreditProduct.first
   }
 ]
