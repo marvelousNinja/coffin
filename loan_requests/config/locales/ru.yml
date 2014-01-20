@@ -41,6 +41,8 @@ ru:
       items: "Элементы"
       message: "Список изменений"
     actions:
+      create_loan_request:
+        title: 'Подать заявку на кредит'
       security_process:
         menu: "Обработать заявку"
         title: "Обработка заявки сотрудником службы безопасности"
@@ -76,7 +78,7 @@ ru:
         menu: "Редактирование"
         breadcrumb: "Редактирование"
         link: "Редактировать %{model_label}"
-        done: "сохранить"
+        done: "сохранено"
       delete:
         title: "Удаление: %{model_label} '%{object_label}'"
         menu: "Удаление"

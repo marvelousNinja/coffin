@@ -7,6 +7,12 @@ module Concerns::LoanRequest::RailsAdmin
     end
 
     rails_admin do
+      list do
+        field :id
+        field :sum
+        field :interval
+      end
+
       create do
         field :sum
         field :interval
