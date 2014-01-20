@@ -14,7 +14,7 @@ module Concerns::LoanAgreement::StateMachine
       end
 
       event :activate do
-        transition [:approved] => :active
+        transition [:signed] => :active
       end
 
       event :cancel do
