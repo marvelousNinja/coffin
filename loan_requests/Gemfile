@@ -22,6 +22,9 @@ gem 'enumerize'
 gem 'date_validator'
 gem 'countries'
 
+gem 'i18n_country_select'
+gem 'i18n-country-translations'
+
 gem 'thin'
 
 gem 'mq_connector', path: '../mq_connector'

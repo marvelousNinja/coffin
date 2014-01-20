@@ -5,7 +5,7 @@ module Concerns::Profile::Validations
     validates :gender, presence: true, inclusion: { in: Concerns::Profile::Enumerations::GENDERS }
     validates :marital_status, presence: true, inclusion: { in: Concerns::Profile::Enumerations::MARITAL_STATUSES }
     validates :education, presence: true, inclusion: { in: Concerns::Profile::Enumerations::EDUCATIONS }
-    validates :origin_country, presence: true, inclusion: { in: Country.all.map(&:first) }
+    validates :origin_country, presence: true, inclusion: { in: I18nCountrySelect::Countries::COUNTRY_CODES }#Country.all.map(&:first) }
 
     validates :name, :middle_name, :surname,
       format: { with: /\A((([доДО]')?[А-Я])?[а-я]{1,}(-[А-Яа-я]{2,})?[ ]?)+\S\z/},

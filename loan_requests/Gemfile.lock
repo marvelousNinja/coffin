@@ -95,6 +95,13 @@ GEM
     hike (1.2.3)
     httpauth (0.2.0)
     i18n (0.6.9)
+    i18n-country-translations (1.0.2)
+      i18n (~> 0.5)
+      railties (>= 3.0.0)
+    i18n_country_select (1.1.0)
+      i18n (~> 0.5)
+      i18n-country-translations (>= 0.0.9)
+      unicode_utils (>= 1.0.0)
     jbuilder (1.5.3)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
@@ -216,6 +223,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unicode_utils (1.4.0)
     warden (1.2.3)
       rack (>= 1.0)
 
@@ -228,6 +236,8 @@ DEPENDENCIES
   countries
   date_validator
   enumerize
+  i18n-country-translations
+  i18n_country_select
   jbuilder (~> 1.2)
   jquery-rails
   mq_connector!
