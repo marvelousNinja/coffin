@@ -1,7 +1,7 @@
 class UsersHandler
   include MqConnector::Handler
 
-  listen_to :users, :as => :creditor
+  listen_to :users, :as => :creditor_handler_for_users
 
   on :created_for do |user|
     agreement_data = user.fetch('for')

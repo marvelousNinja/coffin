@@ -1,7 +1,7 @@
 class LoanRequestsHandler
   include MqConnector::Handler
 
-  listen_to :loan_requests, :as => :notificator
+  listen_to :loan_requests, :as => :notificator_handler_for_loan_requests
 
   on :approved do |request|
     account_sid = 'AC9a2ebc1510d91b00dd7a22b6ba1547d3'

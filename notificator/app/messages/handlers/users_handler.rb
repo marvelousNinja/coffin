@@ -1,7 +1,7 @@
 class UsersHandler
   include MqConnector::Handler
 
-  listen_to :users, :as => :notificator
+  listen_to :users, :as => :notificator_handler_for_users
 
   on :created do |user_data|
     account_sid = 'AC9a2ebc1510d91b00dd7a22b6ba1547d3'
