@@ -5,7 +5,8 @@ class LoanRequestsHandler
 
   on :approved do |request|
     agreement = LoanAgreement.create!({
-      credit_product: CreditProduct.first
+      credit_product: CreditProduct.first,
+      loan_request_id: request['id']
     })
 
    UsersSender.create_for_agreement(request['profile']['email'], agreement.id)
