@@ -3,5 +3,6 @@ module Concerns::User::Relationships
 
   included do
     has_many :loan_agreements
+    has_paper_trail
   end
 end

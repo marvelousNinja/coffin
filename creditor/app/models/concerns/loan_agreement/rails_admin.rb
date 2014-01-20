@@ -69,23 +69,23 @@ module Concerns::LoanAgreement::RailsAdmin
 
       show do
         field :pdf, :carrierwave
-        # field :basic_part_graph do
-        #   formatted_value do
-        #     bindings[:view].line_chart Payment.group_by_day(:scheduled_at).sum(:basic_part)
-        #   end
-        # end
+        field :basic_part_graph do
+          formatted_value do
+            bindings[:view].line_chart Payment.group_by_day(:scheduled_at).sum(:basic_part)
+          end
+        end
 
-        # field :percent_part_graph do
-        #   formatted_value do
-        #     bindings[:view].line_chart Payment.group_by_day(:scheduled_at).sum(:percent_part)
-        #   end
-        # end
+        field :percent_part_graph do
+          formatted_value do
+            bindings[:view].line_chart Payment.group_by_day(:scheduled_at).sum(:percent_part)
+          end
+        end
 
-        # field :complete_graph do
-        #   formatted_value do
-        #     bindings[:view].line_chart Payment.group_by_day(:scheduled_at).sum(:sum)
-        #   end
-        # end
+        field :complete_graph do
+          formatted_value do
+            bindings[:view].line_chart Payment.group_by_day(:scheduled_at).sum(:sum)
+          end
+        end
       end
     end
   end

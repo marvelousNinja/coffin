@@ -6,6 +6,7 @@ User.delete_all
 FinePolicy.delete_all
 PaymentPolicy.delete_all
 Payment.delete_all
+LoanAgreement.delete_all
 
 sum_policies = SumPolicy.create! [
   {
@@ -68,11 +69,5 @@ credit_products = CreditProduct.create! [
     fine_policy: FinePolicy.first,
     payment_policy: PaymentPolicy.first,
     template_path: 'loan_agreements/light'
-  }
-]
-
-loan_agreements = LoanAgreement.create! [
-  {
-    credit_product: CreditProduct.first
   }
 ]

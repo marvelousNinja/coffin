@@ -44,5 +44,21 @@ ru:
         incomplete_higher:	"Незаконченное высшее"
         higher:			"Высшее"
         postgraduate:		"Последипломное"
+  activerecord:
+    state_machines:
+      states:
+        not_approved: 'Ожидает обработки'
+        ready_to_sign: 'Готов к подписанию'
+        signed: 'Подписан'
+        activated: 'Активен'
+        cancelled: 'Отменен'
+      events:
+        prepare_to_sign: 'Подготовить к подписанию'
+        sign: 'Подписать'
+        activate: 'Активировать'
+        cancel: 'Отменить'
+
+
+
 
 

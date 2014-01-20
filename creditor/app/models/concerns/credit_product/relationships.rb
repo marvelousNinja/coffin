@@ -9,5 +9,6 @@ module Concerns::CreditProduct::Relationships
     belongs_to :payment_policy
 
     has_many :loan_agreements
+    has_paper_trail
   end
 end

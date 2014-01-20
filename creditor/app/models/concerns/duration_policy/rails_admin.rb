@@ -24,8 +24,16 @@ module Concerns::DurationPolicy::RailsAdmin
       end
 
       edit do
-        field :min, :integer
-        field :max, :integer
+        field :min, :integer do
+          formatted_value do
+            value.to_i
+          end
+        end
+        field :max, :integer do
+          formatted_value do
+            value.to_i
+          end
+        end
         field :period
       end
     end

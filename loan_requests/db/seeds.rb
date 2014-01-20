@@ -37,7 +37,7 @@ loan_requests = LoanRequest.create! [
       mobile_phone: '+375299983953',
       email: 'alexsologoub@gmail.com',
       education: 'preschool',
-      origin_country: 'Belarus'
+      origin_country: 'BY'
     }),
     document: Document.new({
       document_type: 'passport',
@@ -51,7 +51,7 @@ loan_requests = LoanRequest.create! [
       latin_surname: 'SALAHUB',
     }),
     registration_address: RegistrationAddress.new({
-      country: 'Belarus',
+      country: 'BY',
       zip_code: '211440',
       address_line: 'Матусевича 1000',
       registered_at: '23.12.2007',
@@ -80,7 +80,7 @@ loan_requests = LoanRequest.create! [
         mobile_phone: '+375299983953',
         email: 'tungusova@gmail.com',
         education: 'preschool',
-        origin_country: 'Belarus'
+        origin_country: 'BY'
       }),
       document: Document.new({
         document_type: 'passport',
@@ -94,7 +94,7 @@ loan_requests = LoanRequest.create! [
         latin_surname: 'SHTIK',
       }),
       registration_address: RegistrationAddress.new({
-        country: 'Belarus',
+        country: 'BY',
         zip_code: '211440',
         address_line: 'Матусевича 1001',
         registered_at: '23.12.2007',

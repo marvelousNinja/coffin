@@ -7,5 +7,6 @@ module Concerns::LoanAgreement::Relationships
     belongs_to :user
 
     delegate :sum_policy, :percent_policy, :fine_policy, :duration_policy, :payment_policy, :to => :credit_product
+    has_paper_trail
   end
 end

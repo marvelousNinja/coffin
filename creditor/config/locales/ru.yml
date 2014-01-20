@@ -72,7 +72,7 @@ ru:
         link: "Добавить %{model_label}"
         done: "Создание"
       edit:
-        title: "Редактировение: %{model_label} '%{object_label}'"
+        title: "Редактирование: %{model_label} '%{object_label}'"
         menu: "Редактирование"
         breadcrumb: "Редактирование"
         link: "Редактировать %{model_label}"
@@ -425,6 +425,9 @@ ru:
 
   activerecord:
     models:
+      pdf_template:
+        one: 'Шаблон договора'
+        other: 'Шаблоны договора'
       credit_product:
         one: "Кредитный продукт"
         other: "Кредитные продукты"
@@ -459,8 +462,15 @@ ru:
         one: "Версия"
         other: "Версии"
     attributes:
+      pdf_template:
+        body: 'Тело'
+        path: 'Путь'
+        handler: 'Обработчик'
+        locale: 'Язык'
+        partial: 'Встраиваемый'
+        format: 'Формат'
       credit_product:
-        name: "Наименование" 
+        name: "Наименование"
         sum_policy: "Ограничение суммы"
         duration_policy: "Ограничение продолжительности"
         fine_policy: "Политика штрафования"

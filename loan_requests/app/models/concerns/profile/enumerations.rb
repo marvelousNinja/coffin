@@ -28,6 +28,6 @@ module Concerns::Profile::Enumerations
       postgraduate)
     enumerize :education, in: EDUCATIONS, default: EDUCATIONS.first
 
-    enumerize :origin_country, in: I18nCountrySelect::Countries::COUNTRY_CODES
+    enumerize :origin_country, in: I18nCountrySelect::Countries::COUNTRY_CODES, default: 'BY'
   end
 end

@@ -13,6 +13,21 @@ en:
       policy:
         one: "Policy"
         other: "Policies"
+      payment_policy:
+        one: "Payment policy"
+        other: "Payment policies"
+      sum_policy:
+        one: "Sum policy"
+        other: "Sum policies"
+      percent_policy:
+        one: "Percent policy"
+        other: "Percent policies"
+      fine_policy:
+        one: "Fine policy"
+        other: "Fine policies"
+      duration_policy:
+        one: "Duration policy"
+        other: "Duration policies"
       user:
         one: "User"
         other: "Users"
@@ -21,7 +36,7 @@ en:
         other: "Versions"
     attributes:
       credit_product:
-        name: "Name" 
+        name: "Name"
         sum_policy: "Sum policy"
         duration_policy: "Duration policy"
         fine_policy: "Fine policy"
